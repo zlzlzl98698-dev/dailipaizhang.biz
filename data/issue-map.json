@@ -1,0 +1,583 @@
+{
+  "schemaVersion": "1.1",
+  "verifiedAt": "2026-11-23",
+  "totalScenarios": 24,
+  "issues": [
+    {
+      "id": "sub-http-200-empty",
+      "code": "HTTP 200",
+      "category": "subscription",
+      "severity": "high",
+      "title": "订阅返回 HTTP 200 但内容为 0 字节 / 节点列表为空",
+      "os": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "osList": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "clients": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box"],
+      "clientList": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box"],
+      "httpCodes": ["200"],
+      "errorCodes": ["HTTP 200 (0 nodes)", "Empty proxies list"],
+      "symptoms": [
+        "点击更新订阅提示成功或返回 200 状态码，但节点数为 0。",
+        "导入订阅后策略组内无任何可用节点。"
+      ],
+      "lowRiskChecks": [
+        "确认套餐未到期且剩余流量大于 0（部分面板对到期账号返回 HTTP 200 空列表）。",
+        "检查客户端 User-Agent 与订阅格式是否匹配（如 Clash YAML vs Base64 vs sing-box JSON）。",
+        "核实该品牌是否属于「仅限专属客户端、不提供第三方订阅链接」（如飞猫云、Firefly、无忧链接 2026-10起、灵猫、SOGO、闪跃、全球云、隐形人）。"
+      ],
+      "targetUrl": "/troubleshooting/articles/sub-http-200-empty",
+      "relatedUrls": ["/troubleshooting/articles/sub-http-401-403-404-503", "/guides/subscriptions/"]
+    },
+    {
+      "id": "sub-http-401-403-404-503",
+      "code": "401/403/404/503",
+      "category": "subscription",
+      "severity": "high",
+      "title": "更新订阅失败：HTTP 401 / 403 / 404 / 503 或被重定向",
+      "os": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "osList": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "clients": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box"],
+      "clientList": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box"],
+      "httpCodes": ["401/403/404/503"],
+      "errorCodes": ["HTTP 401", "HTTP 403", "HTTP 404", "HTTP 503"],
+      "symptoms": [
+        "拉取订阅弹窗报 401 Unauthorized、403 Forbidden、404 Not Found 或 503 Service Unavailable。",
+        "开启代理时无法更新订阅，关闭代理也提示连接被拒绝。"
+      ],
+      "lowRiskChecks": [
+        "401/404：登录机场面板确认是否曾重置订阅 Token，重新复制完整无空格订阅链接。",
+        "403/503：切换客户端「直连更新 / 通过系统代理更新」开关，排除 Cloudflare 机房 IP 拦截或循环代理。",
+        "严禁将含私人 Token 的完整订阅链接发到公开群组或未知第三方在线转换站。"
+      ],
+      "targetUrl": "/troubleshooting/articles/sub-http-401-403-404-503",
+      "relatedUrls": ["/troubleshooting/articles/sub-http-200-empty", "/troubleshooting/articles/sub-tls-dns-timeout"]
+    },
+    {
+      "id": "sub-tls-dns-timeout",
+      "code": "TLS/DNS",
+      "category": "subscription",
+      "severity": "high",
+      "title": "更新订阅提示 TLS 证书错误、DNS 解析失败或超时",
+      "os": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "osList": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "clients": ["Clash Verge Rev", "v2rayN", "Shadowrocket", "sing-box"],
+      "clientList": ["Clash Verge Rev", "v2rayN", "Shadowrocket", "sing-box"],
+      "httpCodes": ["TLS/DNS"],
+      "errorCodes": ["x509 certificate error", "DNS lookup failed", "TLS handshake timeout"],
+      "symptoms": [
+        "拉取订阅报 x509 certificate has expired / signed by unknown authority。",
+        "提示 dial tcp: lookup sub.xxx on ... no such host 或 i/o timeout。"
+      ],
+      "lowRiskChecks": [
+        "先核对本机系统时间与时区误差是否在 30 秒以内。",
+        "检查本地 DNS 或 hosts 文件是否污染了订阅域名，尝试使用备用订阅地址。",
+        "若当前网络阻断了默认订阅域名，先连接可用备用节点后再通过代理拉取更新。"
+      ],
+      "targetUrl": "/troubleshooting/articles/sub-tls-dns-timeout",
+      "relatedUrls": ["/troubleshooting/articles/time-sync-tls-cert-error", "/troubleshooting/articles/dns-leak-hijack-fix"]
+    },
+    {
+      "id": "nodes-all-timeout",
+      "code": "0B / Timeout",
+      "category": "timeout",
+      "severity": "high",
+      "title": "所有节点同时超时（Timeout / -1ms / 全部不可用）",
+      "os": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "osList": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "clients": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box", "专属客户端"],
+      "clientList": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box", "专属客户端"],
+      "httpCodes": ["0B", "TLS/DNS"],
+      "errorCodes": ["Timeout", "-1ms", "All nodes unreachable"],
+      "symptoms": [
+        "客户端一键测速全部显示 Timeout 或红色 -1ms。",
+        "切换香港、日本、新加坡、美国任意节点均无法握手。"
+      ],
+      "lowRiskChecks": [
+        "先确认本地直连国内网页正常，排除基础宽带或 Wi-Fi 断网。",
+        "校准操作系统 NTP 时间（VLESS/Trojan/VMess 对时钟偏差极敏感）。",
+        "更新一次订阅，区分「套餐到期/流量耗尽/配置过期」与「机场中转入口全局故障」。"
+      ],
+      "targetUrl": "/troubleshooting/articles/nodes-all-timeout",
+      "relatedUrls": ["/troubleshooting/articles/quota-expired-vs-stale-config", "/troubleshooting/articles/time-sync-tls-cert-error"]
+    },
+    {
+      "id": "nodes-partial-region-timeout",
+      "code": "0B",
+      "category": "timeout",
+      "severity": "medium",
+      "title": "仅单个节点或特定地区超时：节点维护、路由劣化与测速 0B 解读",
+      "os": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "osList": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "clients": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box"],
+      "clientList": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box"],
+      "httpCodes": ["0B"],
+      "errorCodes": ["0B/s", "Single node timeout"],
+      "symptoms": [
+        "同订阅下大部分节点正常，但个别节点（如实测图中的香港02、台湾02、香港01）测速为 0B 或超时。",
+        "某一特定地区整组节点延迟突增或断流。"
+      ],
+      "lowRiskChecks": [
+        "单节点 0B 在真实测速（如光速云 HK02、微风 TW02、宇宙云 HK01）中属常见单点异常，先手动切至同地区其他编号节点。",
+        "刷新订阅以同步服务商最新的中转端口映射。",
+        "避免在策略组死锁单一固定节点，启用 URL-Test 自动选点或 Fallback 容灾组。"
+      ],
+      "targetUrl": "/troubleshooting/articles/nodes-partial-region-timeout",
+      "relatedUrls": ["/troubleshooting/articles/nodes-all-timeout", "/troubleshooting/articles/high-latency-packet-loss-peak"]
+    },
+    {
+      "id": "connected-no-internet",
+      "code": "No Internet",
+      "category": "no-internet",
+      "severity": "high",
+      "title": "节点已连接且有延迟，但所有网页都打不开",
+      "os": ["Windows", "macOS", "Android", "iOS", "Linux"],
+      "osList": ["Windows", "macOS", "Android", "iOS", "Linux"],
+      "clients": ["Clash Verge Rev", "v2rayN", "Shadowrocket", "sing-box"],
+      "clientList": ["Clash Verge Rev", "v2rayN", "Shadowrocket", "sing-box"],
+      "httpCodes": ["TLS/DNS"],
+      "errorCodes": ["ERR_PROXY_CONNECTION_FAILED", "ERR_TIMED_OUT"],
+      "symptoms": [
+        "客户端测速延迟绿字正常，但浏览器打开任何网页均报错或无限转圈。",
+        "退出客户端后连国内网页也报 ERR_PROXY_CONNECTION_FAILED。"
+      ],
+      "lowRiskChecks": [
+        "核对客户端监听端口（如 7890 / 7897 / 10808）与操作系统代理设置是否一致。",
+        "排查是否同时运行了两个代理客户端或浏览器代理扩展（SwitchyOmega）抢占端口。",
+        "检查出站模式是否误设为 REJECT 或在 GLOBAL 下选到了 0B 失效节点。"
+      ],
+      "targetUrl": "/troubleshooting/articles/connected-no-internet",
+      "relatedUrls": ["/troubleshooting/articles/tun-vs-system-proxy", "/troubleshooting/articles/v2rayn-system-proxy-fail"]
+    },
+    {
+      "id": "specific-sites-unreachable",
+      "code": "TLS/DNS",
+      "category": "no-internet",
+      "severity": "medium",
+      "title": "仅个别网站或 AI 工具打不开、与浏览器结果不一致",
+      "os": ["Windows", "macOS", "Android", "iOS", "Linux"],
+      "osList": ["Windows", "macOS", "Android", "iOS", "Linux"],
+      "clients": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box"],
+      "clientList": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box"],
+      "httpCodes": ["TLS/DNS"],
+      "errorCodes": ["Access Denied", "Unsupported Country", "YouTube CN"],
+      "symptoms": [
+        "Google 和 YouTube 能打开，但 ChatGPT、Claude 或 Gemini 提示地区不支持或拒绝访问。",
+        "新加坡/台湾/香港节点看 YouTube 被判定送中(CN)。"
+      ],
+      "lowRiskChecks": [
+        "核对分流规则是否将该域名误分到 DIRECT 直连或受限地区节点（如香港节点直连 OpenAI/Gemini 常受限，见光速云 Miaoko 实测图）。",
+        "使用浏览器无痕模式排除历史 Cookie 与定位缓存污染。",
+        "在策略组中将 AI 与流媒体固定到实测解锁的日本、新加坡或美国节点。"
+      ],
+      "targetUrl": "/troubleshooting/articles/specific-sites-unreachable",
+      "relatedUrls": ["/ai-media/chatgpt/", "/ai-media/youtube/"]
+    },
+    {
+      "id": "tun-not-working",
+      "code": "TUN Mode",
+      "category": "tun",
+      "severity": "high",
+      "title": "TUN 模式开启无效、开关弹回或开启后断网",
+      "os": ["Windows", "macOS", "Linux", "OpenWrt"],
+      "osList": ["Windows", "macOS", "Linux", "OpenWrt"],
+      "clients": ["Clash Verge Rev", "Clash Meta", "v2rayN", "sing-box"],
+      "clientList": ["Clash Verge Rev", "Clash Meta", "v2rayN", "sing-box"],
+      "httpCodes": ["198.18", "TLS/DNS"],
+      "errorCodes": ["TUN start failed", "Service Mode not installed", "wintun error"],
+      "symptoms": [
+        "开启 TUN 模式后开关自动退回关闭，或终端/游戏仍不走代理。",
+        "开启 TUN 后全网断联，连局域网与国内网站也无法访问。"
+      ],
+      "lowRiskChecks": [
+        "确认客户端已安装并启用 Service Mode（服务模式）或拥有管理员/系统网络扩展权限。",
+        "检查是否同时开启了游戏加速器、企业 VPN（EasyConnect 等）造成多虚拟网卡路由表冲突。",
+        "确认配置中已开启 `dns.enable: true`；若异常先关闭 TUN 并恢复自动 DNS 回滚。"
+      ],
+      "targetUrl": "/troubleshooting/articles/tun-not-working",
+      "relatedUrls": ["/troubleshooting/articles/tun-vs-system-proxy", "/guides/tun-mode/"]
+    },
+    {
+      "id": "tun-vs-system-proxy",
+      "code": "TUN / Proxy",
+      "category": "no-internet",
+      "severity": "medium",
+      "title": "TUN 模式与系统代理的区别、适用场景与切换后断网修复",
+      "os": ["Windows", "macOS", "Linux"],
+      "osList": ["Windows", "macOS", "Linux"],
+      "clients": ["Clash Verge Rev", "v2rayN", "sing-box"],
+      "clientList": ["Clash Verge Rev", "v2rayN", "sing-box"],
+      "httpCodes": ["198.18"],
+      "errorCodes": ["Proxy loop", "Route conflict"],
+      "symptoms": [
+        "不清楚日常该开系统代理还是 TUN 模式，或者两个同时开导致卡顿。",
+        "从 TUN 切回系统代理后出现部分软件断网。"
+      ],
+      "lowRiskChecks": [
+        "仅浏览器与常规办公应用代理时优先用「系统代理」，需要接管终端 CLI、游戏或 UWP 应用时再开启「TUN 模式」。",
+        "切换模式后若出现解析异常，执行一次 DNS 缓存刷新并检查系统代理开关状态。",
+        "避免在多款代理工具间同时开启系统代理与 TUN。"
+      ],
+      "targetUrl": "/troubleshooting/articles/tun-vs-system-proxy",
+      "relatedUrls": ["/troubleshooting/articles/tun-not-working", "/guides/tun-mode/"]
+    },
+    {
+      "id": "fake-ip-explained-fix",
+      "code": "198.18",
+      "category": "dns",
+      "severity": "medium",
+      "title": "Fake-IP 原理、198.18.0.1 解析异常与微信/局域网冲突修复",
+      "os": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "osList": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "clients": ["Clash Verge Rev", "Clash Meta", "Shadowrocket", "sing-box"],
+      "clientList": ["Clash Verge Rev", "Clash Meta", "Shadowrocket", "sing-box"],
+      "httpCodes": ["198.18"],
+      "errorCodes": ["198.18.0.1", "Fake-IP cache stale"],
+      "symptoms": [
+        "ping 或 nslookup 任何域名都返回 198.18.x.x，关闭代理后直连彻底断网。",
+        "开启 Fake-IP 后企业内网、NAS、微信图片或游戏联机异常。"
+      ],
+      "lowRiskChecks": [
+        "将局域网后缀（`*.lan`、`*.local`）、STUN 与国内常用域名加入 `fake-ip-filter`。",
+        "关闭客户端后若仍解析出 198.18.x.x，刷新系统 DNS 缓存并核查网卡 DNS 是否残留为 127.0.0.1。",
+        "在不兼容 Fake-IP 的特殊内网环境下可切换为 Redir-Host / 真实 IP 解析模式对照。"
+      ],
+      "targetUrl": "/troubleshooting/articles/fake-ip-explained-fix",
+      "relatedUrls": ["/troubleshooting/articles/dns-leak-hijack-fix", "/guides/dns-setup/"]
+    },
+    {
+      "id": "dns-leak-hijack-fix",
+      "code": "TLS/DNS",
+      "category": "dns",
+      "severity": "high",
+      "title": "DNS 污染、DNS 泄漏与代理环境标准 DNS 分流检查路径",
+      "os": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "osList": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "clients": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box"],
+      "clientList": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box"],
+      "httpCodes": ["TLS/DNS", "198.18"],
+      "errorCodes": ["DNS_PROBE_FINISHED_NXDOMAIN", "DNS Leak"],
+      "symptoms": [
+        "代理已连上，但海外网站报 DNS_PROBE_FINISHED_NXDOMAIN 或被劫持到警告页。",
+        "DNS 泄漏测试显示仍由本地运营商 DNS 解析海外域名。"
+      ],
+      "lowRiskChecks": [
+        "检查 Chrome/Edge 浏览器内置「安全 DNS (DoH)」是否绕过了代理客户端分流。",
+        "核对客户端 DNS 配置是否区分了国内 `nameserver` 与海外加密 DoH/DoT 解析通道。",
+        "修改系统网卡 DNS 前先记录原配置，确保随时可回滚为自动获取（DHCP）。"
+      ],
+      "targetUrl": "/troubleshooting/articles/dns-leak-hijack-fix",
+      "relatedUrls": ["/troubleshooting/articles/fake-ip-explained-fix", "/guides/dns-setup/"]
+    },
+    {
+      "id": "clash-verge-startup-fail",
+      "code": "App Start",
+      "category": "startup",
+      "severity": "high",
+      "title": "Clash Verge Rev 无法启动、白屏与 WebView2 / 权限异常",
+      "os": ["Windows", "macOS", "Linux"],
+      "osList": ["Windows", "macOS", "Linux"],
+      "clients": ["Clash Verge Rev"],
+      "clientList": ["Clash Verge Rev"],
+      "httpCodes": [],
+      "errorCodes": ["WebView2 missing", "White screen", "Bad CPU type"],
+      "symptoms": [
+        "双击 Clash Verge Rev 图标无响应，或打开后窗口纯白屏。",
+        "macOS 提示无法打开或架构不匹配（Intel vs Apple Silicon）。"
+      ],
+      "lowRiskChecks": [
+        "Windows 确认系统已安装 Microsoft Edge WebView2 Runtime。",
+        "macOS 核对芯片类型：Apple Silicon (M1-M4) 选 arm64 包，Intel 选 x64 包（见《第三方代理客户端.txt》说明）。",
+        "先备份配置目录后再清理损坏的窗口状态文件，切勿随意关闭系统杀毒软件。"
+      ],
+      "targetUrl": "/troubleshooting/articles/clash-verge-startup-fail",
+      "relatedUrls": ["/troubleshooting/articles/clash-verge-mihomo-yaml-fail", "/clients/clash-verge/"]
+    },
+    {
+      "id": "clash-verge-mihomo-yaml-fail",
+      "code": "YAML Error",
+      "category": "startup",
+      "severity": "medium",
+      "title": "Mihomo 核心启动失败与导入 YAML 配置语法报错排查",
+      "os": ["Windows", "macOS", "Linux", "Android", "OpenWrt"],
+      "osList": ["Windows", "macOS", "Linux", "Android", "OpenWrt"],
+      "clients": ["Clash Verge Rev", "Clash Meta"],
+      "clientList": ["Clash Verge Rev", "Clash Meta"],
+      "httpCodes": [],
+      "errorCodes": ["yaml: unmarshal errors", "unsupported proxy type"],
+      "symptoms": [
+        "切换订阅或开启 Merge/Script 覆写后提示 yaml: unmarshal errors。",
+        "报错 unsupported proxy type: vless / hysteria2。"
+      ],
+      "lowRiskChecks": [
+        "暂时停用全局扩展覆写（Merge / Script），测试原始订阅 Profile 能否正常通过语法校验。",
+        "确认客户端运行的是 Mihomo 内核而非早已停更的原版 Clash 内核。",
+        "检查是否误将 v2rayN Base64 链接或 sing-box JSON 链接直接当作 Clash YAML 导入。"
+      ],
+      "targetUrl": "/troubleshooting/articles/clash-verge-mihomo-yaml-fail",
+      "relatedUrls": ["/troubleshooting/articles/clash-verge-startup-fail", "/clients/mihomo/"]
+    },
+    {
+      "id": "v2rayn-core-load-fail",
+      "code": "Core Fail",
+      "category": "startup",
+      "severity": "medium",
+      "title": "v2rayN 更新失败、Xray/sing-box 核心无法加载与缺运行时修复",
+      "os": ["Windows", "macOS", "Linux"],
+      "osList": ["Windows", "macOS", "Linux"],
+      "clients": ["v2rayN"],
+      "clientList": ["v2rayN"],
+      "httpCodes": [],
+      "errorCodes": ["Core not found", ".NET Desktop Runtime required"],
+      "symptoms": [
+        "启动 v2rayN 提示缺少 .NET Desktop Runtime 或找不到 xray.exe / sing-box.exe 核心文件。",
+        "选中 VLESS / Hysteria 2 节点后日志提示核心启动立即退出。"
+      ],
+      "lowRiskChecks": [
+        "确认已安装对应版本的 .NET Desktop Runtime，且下载的是含 Core 的完整包。",
+        "检查解压路径是否包含特殊字符或位于受限只读目录。",
+        "在 v2rayN 设置中核对不同协议（VLESS / Shadowsocks / Hysteria 2）所绑定的 Xray 或 sing-box 核心类型。"
+      ],
+      "targetUrl": "/troubleshooting/articles/v2rayn-core-load-fail",
+      "relatedUrls": ["/troubleshooting/articles/v2rayn-system-proxy-fail", "/clients/v2rayn/"]
+    },
+    {
+      "id": "v2rayn-system-proxy-fail",
+      "code": "No Internet",
+      "category": "no-internet",
+      "severity": "medium",
+      "title": "v2rayN 显示已运行但浏览器不走代理或系统代理自动被还原",
+      "os": ["Windows", "macOS", "Linux"],
+      "osList": ["Windows", "macOS", "Linux"],
+      "clients": ["v2rayN"],
+      "clientList": ["v2rayN"],
+      "httpCodes": [],
+      "errorCodes": ["System proxy cleared", "Port 10808/10809 mismatch"],
+      "symptoms": [
+        "v2rayN 节点测试延迟正常，但底部状态栏为「清除系统代理」或浏览器完全直连。",
+        "勾选自动配置系统代理后被其他网络软件或浏览器插件立刻重置。"
+      ],
+      "lowRiskChecks": [
+        "检查 v2rayN 底部系统代理模式是否设为「自动配置系统代理」且路由模式非「全部直连」。",
+        "确认 Clash Verge Rev 或其他专属客户端已彻底退出，未在后台争抢系统代理注册表项。",
+        "核对浏览器代理设置是否设为「使用系统代理设置」。"
+      ],
+      "targetUrl": "/troubleshooting/articles/v2rayn-system-proxy-fail",
+      "relatedUrls": ["/troubleshooting/articles/v2rayn-core-load-fail", "/troubleshooting/articles/connected-no-internet"]
+    },
+    {
+      "id": "shadowrocket-import-rules",
+      "code": "iOS Sub",
+      "category": "subscription",
+      "severity": "medium",
+      "title": "Shadowrocket 小火箭无法导入订阅与分流规则不生效",
+      "os": ["iOS"],
+      "osList": ["iOS"],
+      "clients": ["Shadowrocket"],
+      "clientList": ["Shadowrocket"],
+      "httpCodes": ["200", "401/403/404/503"],
+      "errorCodes": ["Invalid subscribe URL", "VPN profile error"],
+      "symptoms": [
+        "小火箭扫码或粘贴订阅链接后未出现节点，或所有流量均走直连/全局不分流。",
+        "连接按钮打开后瞬间弹回关闭状态。"
+      ],
+      "lowRiskChecks": [
+        "确认全局路由（Global Routing）设为「配置（Config）」而非「直连（Direct）」。",
+        "核实所购机场是否支持通用订阅导入（部分专属客户端机场不支持 Shadowrocket）。",
+        "首次开启连接时按 iOS 系统提示授权添加 VPN 配置，并清理冲突的旧 VPN 描述文件。"
+      ],
+      "targetUrl": "/troubleshooting/articles/shadowrocket-import-rules",
+      "relatedUrls": ["/clients/shadowrocket/", "/troubleshooting/articles/cross-client-inconsistency"]
+    },
+    {
+      "id": "android-v2rayng-clash-disconnect",
+      "code": "Android Disconnect",
+      "category": "no-internet",
+      "severity": "medium",
+      "title": "安卓 v2rayNG / Clash Meta 节点失效与后台断连保活",
+      "os": ["Android"],
+      "osList": ["Android"],
+      "clients": ["Clash Meta", "sing-box"],
+      "clientList": ["Clash Meta", "sing-box"],
+      "httpCodes": ["0B"],
+      "errorCodes": ["VpnService revoked", "Background killed"],
+      "symptoms": [
+        "安卓手机锁屏几分钟后代理自动断开，切回桌面发现 VPN 钥匙图标消失。",
+        "开启「始终开启的 VPN」或省电模式后无法正常切换网络。"
+      ],
+      "lowRiskChecks": [
+        "在安卓系统设置中将 v2rayNG / FlClash / Clash Meta 设为「允许后台高耗电 / 不限制电池优化」并锁定最近任务卡片。",
+        "注意 NekoBox for Android 官方提示维护资源有限且警告勿用已被第三方控制的 Google Play 版本，建议优先使用 v2rayNG / FlClash / Hiddify。",
+        "在 Wi-Fi 与移动数据切换后若假死，关闭再重开一次代理服务刷新 VpnService 隧道。"
+      ],
+      "targetUrl": "/troubleshooting/articles/android-v2rayng-clash-disconnect",
+      "relatedUrls": ["/clients/clash-meta/", "/vpn/android/"]
+    },
+    {
+      "id": "time-sync-tls-cert-error",
+      "code": "TLS/DNS",
+      "category": "timeout",
+      "severity": "high",
+      "title": "系统时间不同步导致 VLESS / TLS 握手失败与校准方法",
+      "os": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "osList": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "clients": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box"],
+      "clientList": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box"],
+      "httpCodes": ["TLS/DNS", "0B"],
+      "errorCodes": ["tls: handshake failure", "certificate not yet valid", "time skew"],
+      "symptoms": [
+        "电脑休眠唤醒、双系统切换或软路由断电重启后所有 TLS/VLESS 节点突然全红超时。",
+        "日志报 x509: certificate has expired or is not yet valid。"
+      ],
+      "lowRiskChecks": [
+        "核对本机时钟与标准 UTC+8 时间误差是否超过 30–60 秒。",
+        "先关闭代理或确保 NTP 服务器域名（如 `time.windows.com`、`ntp.aliyun.com`）走直连完成时间同步。",
+        "同步时间后重启客户端内核再测速。"
+      ],
+      "targetUrl": "/troubleshooting/articles/time-sync-tls-cert-error",
+      "relatedUrls": ["/troubleshooting/articles/sub-tls-dns-timeout", "/troubleshooting/articles/nodes-all-timeout"]
+    },
+    {
+      "id": "udp-nat-firewall-blocks",
+      "code": "0B",
+      "category": "slow",
+      "severity": "medium",
+      "title": "UDP 转发失败、NAT 类型受限与运营商/本地防火墙排查",
+      "os": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "osList": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "clients": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box"],
+      "clientList": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box"],
+      "httpCodes": ["0B"],
+      "errorCodes": ["UDP Unknown", "QUIC timeout", "NAT Restricted"],
+      "symptoms": [
+        "网页能打开，但语音通话、联机游戏或基于 QUIC/Hysteria 2 的节点无法连接。",
+        "测速图中节点 UDP 类型显示 Unknown 或 RestrictedCone。"
+      ],
+      "lowRiskChecks": [
+        "确认客户端配置与节点本身已启用 `udp: true` 转发（2026-08-11 多张 Shadowsocks 实测图中 UDP 显示为 Unknown）。",
+        "若处于校园网/公司网封禁高端口 UDP 的环境，将浏览器 QUIC 实验项关闭或切换至 TCP/VLESS/Trojan 节点。",
+        "联机游戏场景优先选择实测标注 FullCone 的节点。"
+      ],
+      "targetUrl": "/troubleshooting/articles/udp-nat-firewall-blocks",
+      "relatedUrls": ["/vpn/gaming/", "/troubleshooting/articles/high-latency-packet-loss-peak"]
+    },
+    {
+      "id": "high-latency-packet-loss-peak",
+      "code": "0B",
+      "category": "slow",
+      "severity": "medium",
+      "title": "晚高峰高延迟、丢包与卡顿：区分本地宽带、中转与落地瓶颈",
+      "os": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "osList": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "clients": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box", "专属客户端"],
+      "clientList": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box", "专属客户端"],
+      "httpCodes": ["0B"],
+      "errorCodes": ["High RTT", "Packet loss", "Evening peak throttle"],
+      "symptoms": [
+        "白天测速数百 Mbps，晚上 20:00–23:00 视频加载卡顿、SSH 敲字延迟高。",
+        "TLS RTT 很低（如 25ms），但 HTTPS 延迟高达 800ms+。"
+      ],
+      "lowRiskChecks": [
+        "对比「本机到国内网关」「中转入口 TLS RTT」与「落地 HTTPS 延迟」，定位拥塞发生段。",
+        "切换不同运营商入口或冷门编号节点，避开热门 01/02 号拥挤节点。",
+        "不要轻信非晚高峰单次测速表格，以自己所在运营商晚高峰实测为准。"
+      ],
+      "targetUrl": "/troubleshooting/articles/high-latency-packet-loss-peak",
+      "relatedUrls": ["/routes/low-latency/", "/troubleshooting/articles/bandwidth-multiplier-speedtest-diff"]
+    },
+    {
+      "id": "bandwidth-multiplier-speedtest-diff",
+      "code": "0B",
+      "category": "slow",
+      "severity": "low",
+      "title": "为何客户端测速与实际下载/网页体感差异大及倍率计算",
+      "os": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "osList": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "clients": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box"],
+      "clientList": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box"],
+      "httpCodes": ["0B"],
+      "errorCodes": ["Speed mismatch", "High traffic deduction"],
+      "symptoms": [
+        "测速图显示 500MB/s（或 500Mbps），但自己家里下载只有 30MB/s。",
+        "跑了一次全节点测速就扣掉十几 GB 套餐流量。"
+      ],
+      "lowRiskChecks": [
+        "区分单位 `MB/s`（字节每秒）与 `Mbps`（比特每秒，1 MB/s = 8 Mbps），并受限于本地宽带物理上限。",
+        "注意全节点多线程测速非常耗流量（如光速云 2026-08-11 32 线程测 54 节点单次消耗 19.4GB 流量），小流量包切勿频繁全量测速。",
+        "核对节点倍率（1x vs 2x/3x），高倍率节点跑测速会按倍数扣减套餐额度。"
+      ],
+      "targetUrl": "/troubleshooting/articles/bandwidth-multiplier-speedtest-diff",
+      "relatedUrls": ["/routes/multipliers/", "/troubleshooting/articles/quota-expired-vs-stale-config"]
+    },
+    {
+      "id": "quota-expired-vs-stale-config",
+      "code": "0B / Timeout",
+      "category": "timeout",
+      "severity": "medium",
+      "title": "套餐到期、流量耗尽与客户端旧配置过时的快速区分",
+      "os": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "osList": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "clients": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box", "专属客户端"],
+      "clientList": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box", "专属客户端"],
+      "httpCodes": ["200", "401/403/404/503", "0B"],
+      "errorCodes": ["Quota exceeded", "Account expired", "Stale config"],
+      "symptoms": [
+        "原本好好的节点突然全部连不上，或者列表里多出一条「剩余流量 0GB / 请续费」提示节点。",
+        "长期未更新订阅，旧中转 IP 下线导致全部超时。"
+      ],
+      "lowRiskChecks": [
+        "直连登录机场面板查看「套餐到期时间」与「当月已用/剩余流量（含不限时包余额）」。",
+        "若账期与流量均正常，在客户端手动点击一次「更新订阅」拉取最新入口地址。",
+        "区分月付周期重置日（购买日重置 vs 每月 1 日重置）。"
+      ],
+      "targetUrl": "/troubleshooting/articles/quota-expired-vs-stale-config",
+      "relatedUrls": ["/troubleshooting/articles/nodes-all-timeout", "/pricing/non-expiring/"]
+    },
+    {
+      "id": "client-migration-backup",
+      "code": "App Start",
+      "category": "startup",
+      "severity": "low",
+      "title": "从旧客户端（Clash for Windows / Mihomo Party）安全迁移并备份配置",
+      "os": ["Windows", "macOS", "Linux", "Android"],
+      "osList": ["Windows", "macOS", "Linux", "Android"],
+      "clients": ["Clash Verge Rev", "Clash Meta", "v2rayN", "sing-box"],
+      "clientList": ["Clash Verge Rev", "Clash Meta", "v2rayN", "sing-box"],
+      "httpCodes": [],
+      "errorCodes": ["Legacy client deprecated", "Port conflict on migration"],
+      "symptoms": [
+        "仍在用停更的旧客户端或维护状态待核实的 Mihomo Party，导入新协议报错。",
+        "安装新客户端后与旧客户端开机自启、系统代理或虚拟网卡冲突。"
+      ],
+      "lowRiskChecks": [
+        "迁移前先导出订阅 URL 清单与自定义覆写规则备份（注意《第三方代理客户端.txt》提示 Mihomo Party 需关注维护状态，NekoBox 勿用 Google Play 版）。",
+        "在旧客户端中先关闭「系统代理」「TUN 模式」与「开机自启」，卸载旧虚拟网卡服务后再启动新客户端。",
+        "在新客户端（如 Clash Verge Rev / FlClash / v2rayN）导入订阅并测试连通性。"
+      ],
+      "targetUrl": "/troubleshooting/articles/client-migration-backup",
+      "relatedUrls": ["/clients/mihomo/", "/clients/clash-verge/"]
+    },
+    {
+      "id": "cross-client-inconsistency",
+      "code": "200",
+      "category": "subscription",
+      "severity": "medium",
+      "title": "同一订阅在不同客户端表现不一致：协议支持、核心与 UA 差异",
+      "os": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "osList": ["Windows", "macOS", "Android", "iOS", "Linux", "OpenWrt"],
+      "clients": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box", "专属客户端"],
+      "clientList": ["Clash Verge Rev", "Clash Meta", "v2rayN", "Shadowrocket", "sing-box", "专属客户端"],
+      "httpCodes": ["200", "0B"],
+      "errorCodes": ["UA mismatch", "Protocol unsupported"],
+      "symptoms": [
+        "同一个机场在手机 Shadowrocket / v2rayNG 能用，在电脑客户端导入却少节点或连不上。",
+        "品牌宣称 VLESS，但在不同测速或客户端下发的却是 Shadowsocks 或 AnyTLS 节点。"
+      ],
+      "lowRiskChecks": [
+        "核对面板是否根据客户端请求头 User-Agent 下发了不同协议集（如光速云在不同测试工具下分别出现 Shadowsocks 54/62 节点与 Vless/AnyTLS 70 节点）。",
+        "检查老客户端（如 Potatso / 旧版 Clash）是否因不支持 VLESS / Hysteria 2 而自动过滤了这些节点。",
+        "若品牌已切换为仅限官方专属客户端（如无忧链接、Firefly、灵猫 2026-10起），第三方客户端将无法再同步最新节点。"
+      ],
+      "targetUrl": "/troubleshooting/articles/cross-client-inconsistency",
+      "relatedUrls": ["/troubleshooting/articles/sub-http-200-empty", "/guides/subscriptions/"]
+    }
+  ]
+}

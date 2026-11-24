@@ -1,0 +1,27 @@
+{
+  "name": "dailipaizhang-biz",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "代理排障｜代理客户端故障诊断与网络工具指南 (dailipaizhang.biz)",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs && pagefind --site docs/.vitepress/dist --output-subdir pagefind",
+    "preview": "vitepress preview docs",
+    "keyword-matrix": "node scripts/keyword-matrix.mjs",
+    "audit:urls": "node scripts/audit-urls.mjs",
+    "audit:keywords": "node scripts/audit-keywords.mjs",
+    "audit:brands": "node scripts/audit-brands.mjs",
+    "audit:content-quality": "node scripts/audit-content-quality.mjs",
+    "validate:jsonld": "node scripts/validate-jsonld.mjs",
+    "validate:links": "node scripts/validate-links.mjs",
+    "qa": "node scripts/run-qa.mjs",
+    "test": "node scripts/run-qa.mjs"
+  },
+  "devDependencies": {
+    "pagefind": "^1.6.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitepress": "^1.6.4"
+  }
+}

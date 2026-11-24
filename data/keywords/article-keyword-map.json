@@ -1,0 +1,3085 @@
+{
+  "version": "2.0",
+  "updatedAt": "2026-11-24",
+  "totalIndexedArticles": 96,
+  "totalSecondaryTopicsMapped": 39,
+  "bySecondaryTopic": {
+    "/airport/stable/": [
+      {
+        "url": "/airport/articles/how-to-judge-peak-stability",
+        "title": "如何判断机场晚高峰是否稳定：从 RTT/HTTPS 延迟/0B 异常与 7 天实测法判断",
+        "primaryKeyword": "如何判断机场晚高峰稳定性",
+        "searchIntent": "informational",
+        "summary": "从 RTT、HTTPS 延迟、0B 异常和丢包率四维指标，拆解 7 天晚高峰独立验证 SOP 与测速避坑方法。",
+        "badge": "如何判断机场晚高峰稳定性"
+      }
+    ],
+    "/airport/airport-recommendation/": [
+      {
+        "url": "/airport/articles/more-nodes-better-myth",
+        "title": "机场节点数量越多越好吗：60+ 节点重复复用 vs 有效落地与负载均衡",
+        "primaryKeyword": "机场节点数量越多越好吗",
+        "searchIntent": "informational",
+        "summary": "破除节点数量虚高迷信，深入解析入口与落地复用超售原理，教你识别真假有效节点。",
+        "badge": "机场节点数量越多越好吗"
+      },
+      {
+        "url": "/airport/articles/multi-device-airport-selection",
+        "title": "多设备用户如何选择机场：设备数限制、不限设备宣称与软路由并发策略",
+        "primaryKeyword": "多设备用户如何选择机场",
+        "searchIntent": "commercial",
+        "summary": "针对家庭多终端与团队办公场景，拆解设备连接数限制机制、不限设备真实水分与软路由透明代理方案。",
+        "badge": "多设备用户如何选择机场"
+      }
+    ],
+    "/airport/easy-to-use/": [
+      {
+        "url": "/airport/articles/native-app-vs-third-party-beginners",
+        "title": "自研客户端机场适合新手吗：8 家仅专属端 vs 通用订阅的上手与锁定权衡",
+        "primaryKeyword": "自研客户端机场适合新手吗",
+        "searchIntent": "commercial",
+        "summary": "深度对比 8 家仅支持自研专属 App 的品牌与通用 Clash 订阅方案，权衡上手便捷度与生态锁定风险。",
+        "badge": "自研客户端机场适合新手吗"
+      }
+    ],
+    "/pricing/monthly/": [
+      {
+        "url": "/pricing/articles/under-20-yuan-monthly-guide",
+        "title": "20 元以内月付机场有哪些选择条件：14.9–20 元主力月付实算对比",
+        "primaryKeyword": "20元以内月付机场怎么选",
+        "searchIntent": "commercial",
+        "summary": "梳理 14.9–20 元主流平价月付方案，实算每 GB 真实单价与倍率损耗，教你低成本试错晚高峰。",
+        "badge": "20元以内月付机场怎么选"
+      }
+    ],
+    "/pricing/budget/": [
+      {
+        "url": "/pricing/articles/annual-to-monthly-calculation",
+        "title": "机场年付折算月价怎么算：拆解光速云 99元/年、微风 137元/年、5.6 元集群折算陷阱",
+        "primaryKeyword": "机场年付折算月价计算方法",
+        "searchIntent": "informational",
+        "summary": "拆解年付折算伪月价套路，实算光速云 99 元、微风 137 元与 5.6 元同质盘的真实门槛与沉没成本。",
+        "badge": "机场年付折算月价计算方法"
+      }
+    ],
+    "/pricing/value/": [
+      {
+        "url": "/pricing/articles/is-100gb-enough-monthly",
+        "title": "100GB 与 300GB 流量够用多久及如何选择：按视频/AI/测速耗流实测拆解",
+        "primaryKeyword": "机场100GB流量够用多久",
+        "searchIntent": "informational",
+        "summary": "按 1080p/4K 视频画质、AI 交互与多线程测速消耗，实测拆解 100GB 与 300GB 套餐的使用周期与匹配人群。",
+        "badge": "机场100GB流量够用多久"
+      }
+    ],
+    "/pricing/non-expiring/": [
+      {
+        "url": "/pricing/articles/monthly-vs-non-expiring-value",
+        "title": "月付和不限时套餐哪个更划算：回本周期公式与停运沉没成本比较",
+        "primaryKeyword": "月付和不限时机场哪个划算",
+        "searchIntent": "commercial",
+        "summary": "给出不限时流量包回本周期计算公式，对比 15 家不限时品牌参数，评估机场运营寿命与沉没成本风险。",
+        "badge": "月付和不限时机场哪个划算"
+      }
+    ],
+    "/brands/official-sites/": [
+      {
+        "url": "/brands/articles/verify-official-site-vs-aff",
+        "title": "如何判断机场官网是否真实与识别 AFF 链接：揭秘注册跳板域名、code 参数与链接格式异常",
+        "primaryKeyword": "如何判断机场官网真伪",
+        "searchIntent": "informational",
+        "summary": "揭秘推广注册跳板域名原理、code 邀请参数与单页 Hash 路由机制，剖析 4 家格式异常品牌与防钓鱼准则。",
+        "badge": "如何判断机场官网真伪"
+      }
+    ],
+    "/brands/directory/": [
+      {
+        "url": "/brands/articles/verify-brand-operating-years",
+        "title": "机场品牌的运营时间如何核实：区分开业年份宣称、历史档案与实际可证日期",
+        "primaryKeyword": "机场品牌运营时间核实方法",
+        "searchIntent": "informational",
+        "summary": "教你区分开业年份宣称与可证历史资料，利用 Whois、历史测速快照和公告记录交叉核实品牌运营时间。",
+        "badge": "机场品牌运营时间核实方法"
+      }
+    ],
+    "/brands/promotions/": [
+      {
+        "url": "/brands/articles/coupon-code-not-working-fix",
+        "title": "机场优惠码无法使用怎么办与双码冲突排查：特价年付排除规则与 6 家双码记录",
+        "primaryKeyword": "机场优惠码无法使用怎么办",
+        "searchIntent": "troubleshooting",
+        "summary": "排查机场优惠券无法生效的原因，拆解特价年付排除规则与 6 家双码冲突品牌，提供标准结账验证步骤。",
+        "badge": "机场优惠码无法使用怎么办"
+      }
+    ],
+    "/brands/incidents/": [
+      {
+        "url": "/brands/articles/maintenance-vs-shutdown-signs",
+        "title": "品牌临时维护与停止运营有什么区别：三方交叉核验流程与假失联判断",
+        "primaryKeyword": "机场维护与停止运营区别",
+        "searchIntent": "troubleshooting",
+        "summary": "建立 48 小时假失联与真停运判断框架，结合历史品牌停运证据，给出分级止损与备用容灾操作流程。",
+        "badge": "机场维护与停止运营区别"
+      }
+    ],
+    "/vpn/recommendations/": [
+      {
+        "url": "/vpn/articles/vpn-vs-proxy-architecture",
+        "title": "VPN 与代理有什么区别：底层协议、全局加密、分流能力与合规边界深度对比",
+        "primaryKeyword": "VPN和机场代理有什么区别",
+        "searchIntent": "informational",
+        "summary": "从协议栈、虚拟网卡接管、分流效率与合规边界，深度对比传统商业 VPN 与规则代理机场的本质差异。",
+        "badge": "VPN和机场代理有什么区别"
+      }
+    ],
+    "/vpn/free/": [
+      {
+        "url": "/vpn/articles/vpn-privacy-policy-audit",
+        "title": "免费 VPN 有哪些限制与隐私风险：DNS 泄漏、日志转卖与明文劫持技术真相",
+        "primaryKeyword": "免费VPN有什么风险和限制",
+        "searchIntent": "informational",
+        "summary": "剖析免费网络工具的流量变现模式，实测演示 DNS 与 IPv6 泄漏风险，揭秘免费工具背后的隐私代价。",
+        "badge": "免费VPN有什么风险和限制"
+      }
+    ],
+    "/vpn/mobile/": [
+      {
+        "url": "/vpn/articles/mobile-vpn-auto-disconnect",
+        "title": "手机 VPN 为什么会自动断开：iOS NetworkExtension 与 Android 电池优化深度排查",
+        "primaryKeyword": "手机VPN自动断开排查",
+        "searchIntent": "troubleshooting",
+        "summary": "针对手机端后台断流现象，深入排查 iOS 50MB 内存限制与 Android 厂商深度休眠策略，给出保活配置 SOP。",
+        "badge": "手机VPN自动断开排查"
+      }
+    ],
+    "/vpn/gaming/": [
+      {
+        "url": "/troubleshooting/articles/udp-nat-firewall-blocks",
+        "title": "VPN 和游戏加速器有什么不同：UDP 转发、NAT 类型与延迟抖动机制剖析",
+        "primaryKeyword": "游戏加速器和代理机场区别",
+        "searchIntent": "informational",
+        "summary": "解读 UDP 代理机制与 FullCone/Symmetric NAT 类型，分析游戏联机延迟抖动与普通测速带宽的本质区别。",
+        "badge": "游戏加速器和代理机场区别"
+      }
+    ],
+    "/clients/clash-verge/": [
+      {
+        "url": "/clients/articles/clash-verge-rev-install-guide",
+        "title": "Clash Verge Rev 新手安装与订阅配置指南：内核切换、TUN 授权与分流设置",
+        "primaryKeyword": "Clash Verge Rev新手安装配置教程",
+        "searchIntent": "how-to",
+        "summary": "从安装包架构识别到 Mihomo 内核切换、TUN 虚拟网卡授权与 Rule 模式分流，一步步完成新手配置。",
+        "badge": "Clash Verge Rev新手安装配置教程"
+      }
+    ],
+    "/clients/v2rayn/": [
+      {
+        "url": "/troubleshooting/articles/v2rayn-core-load-fail",
+        "title": "v2rayN 多核心如何选择与切换：Xray vs sing-box 内核差异与系统代理避坑",
+        "primaryKeyword": "v2rayN多核心区别与切换",
+        "searchIntent": "how-to",
+        "summary": "拆解 v2rayN 内部 Xray 与 sing-box 双核心机制，详解路由规则设置、系统代理自动还原与 .NET 依赖修复。",
+        "badge": "v2rayN多核心区别与切换"
+      }
+    ],
+    "/clients/shadowrocket/": [
+      {
+        "url": "/guides/articles/iphone-shadowrocket-add-sub",
+        "title": "Shadowrocket 如何添加订阅与分流配置：美区 Apple ID 获取、规则更新与防断流",
+        "primaryKeyword": "小火箭Shadowrocket安装与添加订阅教程",
+        "searchIntent": "how-to",
+        "summary": "手把手教你在 iOS 设备上配置小火箭，涵盖美区 ID 切区红线（严禁登录系统设置）、订阅导入与分流配置。",
+        "badge": "小火箭Shadowrocket安装与添加订阅教程"
+      }
+    ],
+    "/clients/mihomo/": [
+      {
+        "url": "/clients/articles/flclash-vs-clash-verge-rev",
+        "title": "Mihomo 和 Clash 有什么关系：内核演进、YAML 规则兼容与衍生客户端生态辨析",
+        "primaryKeyword": "Mihomo和Clash有什么关系",
+        "searchIntent": "informational",
+        "summary": "厘清 Clash 到 Clash.Meta 再到 Mihomo 的演进路径，辨析衍生客户端生态与维护状态风险提示。",
+        "badge": "Mihomo和Clash有什么关系"
+      }
+    ],
+    "/ai-media/chatgpt/": [
+      {
+        "url": "/ai-media/articles/chatgpt-region-unsupported-fix",
+        "title": "ChatGPT 提示地区不支持怎么办：OpenAI IP 风控、仅 APP(HK) 识别与静态分流方案",
+        "primaryKeyword": "ChatGPT提示地区不支持解决办法",
+        "searchIntent": "troubleshooting",
+        "summary": "排查 OpenAI 地区封锁与机房 IP 连坐机制，深入解读香港专线仅 APP(HK) 差异，给出规则分流锁定 SOP。",
+        "badge": "ChatGPT提示地区不支持解决办法"
+      }
+    ],
+    "/ai-media/claude/": [
+      {
+        "url": "/ai-media/articles/claude-connection-ban-risks",
+        "title": "Claude 连接失败如何排查：Anthropic 机房 IP 判定、切节点封号风险与出站规避",
+        "primaryKeyword": "Claude连接失败与节点封号排查",
+        "searchIntent": "troubleshooting",
+        "summary": "剖析 Anthropic 对机房 IP 与 ASN 连坐的高压风控，解析自动测速切节点封号风险，提供稳定单区出口配置。",
+        "badge": "Claude连接失败与节点封号排查"
+      }
+    ],
+    "/ai-media/gemini/": [
+      {
+        "url": "/ai-media/articles/gemini-something-went-wrong-fix",
+        "title": "Gemini 出现 Something went wrong 怎么办：Google GeoIP 送中检测与 AI Studio 域名分流",
+        "primaryKeyword": "Gemini报错Something went wrong解决",
+        "searchIntent": "troubleshooting",
+        "summary": "排查 Google GeoIP 与 YouTube 送中(CN)联动阻断 Gemini 的成因，配置 AI Studio 独立分流策略与缓存清理。",
+        "badge": "Gemini报错Something went wrong解决"
+      }
+    ],
+    "/ai-media/netflix/": [
+      {
+        "url": "/ai-media/articles/netflix-originals-vs-full-unlock",
+        "title": "Netflix 原创内容和地区内容有什么区别：原生住宅 IP、DNS 解锁与送中判定辨析",
+        "primaryKeyword": "Netflix只能看自制剧怎么办",
+        "searchIntent": "informational",
+        "summary": "拆解 Netflix 三级解锁判定与原生住宅 IP、商宽机房 IP 差异，分析实测截图中的落地识别偏差与大屏排障。",
+        "badge": "Netflix只能看自制剧怎么办"
+      }
+    ],
+    "/routes/iepl/": [
+      {
+        "url": "/routes/articles/iepl-vs-iplc-differences",
+        "title": "IEPL 和 IPLC 有什么区别：二层以太网 vs 专线点对点架构与宣传辨析",
+        "primaryKeyword": "IEPL和IPLC有什么区别",
+        "searchIntent": "informational",
+        "summary": "从物理二层内网、抖动控制与过境机制，对比 IEPL 与 IPLC 的技术架构，澄清所谓专线永不掉线四大神话。",
+        "badge": "IEPL和IPLC有什么区别"
+      },
+      {
+        "url": "/routes/articles/how-to-spot-unverified-iepl",
+        "title": "如何识别未经验证的专线宣传：比对 2026-10-19 趋同表与 0B/晚高峰丢包证据",
+        "primaryKeyword": "如何识别虚假专线宣传",
+        "searchIntent": "informational",
+        "summary": "拆解低价专线高复用成本账本，比对 10-19 趋同表格与实测截图，教你从丢包率与 0B 节点中识别虚假专线。",
+        "badge": "如何识别虚假专线宣传"
+      }
+    ],
+    "/routes/low-latency/": [
+      {
+        "url": "/routes/articles/low-ping-vs-download-speed",
+        "title": "延迟低是否意味着下载速度快：RTT vs HTTPS Ping 与 32 线程测速 vs 单线程体感",
+        "primaryKeyword": "节点延迟低下载速度就快吗",
+        "searchIntent": "informational",
+        "summary": "辨析 ICMP、TCP握手、TLS RTT 与真实网页单线程延迟，揭示 32 线程多连接测速虚高与假绿死节点真相。",
+        "badge": "节点延迟低下载速度就快吗"
+      }
+    ],
+    "/routes/": [
+      {
+        "url": "/routes/articles/native-ip-vs-datacenter-ip",
+        "title": "原生 IP 和机房 IP 有什么区别：Miaoko IPType/IPRisk 解读与解锁边界",
+        "primaryKeyword": "原生IP和机房IP有什么区别",
+        "searchIntent": "informational",
+        "summary": "详解 Miaoko 测速面板中 IPType 与 IPRisk 含义，对比原生住宅 IP、商宽机房 IP 与 DNS 分流解锁的实质差异。",
+        "badge": "原生IP和机房IP有什么区别"
+      }
+    ],
+    "/guides/installation/": [
+      {
+        "url": "/guides/articles/windows-proxy-client-setup",
+        "title": "Windows 如何配置代理客户端：从校时、导入订阅到 Rule 模式与系统代理/TUN 切换",
+        "primaryKeyword": "Windows代理客户端配置教程",
+        "searchIntent": "how-to",
+        "summary": "Windows 桌面环境从时间同步校准到 Clash Verge 安装、订阅导入、分流模式与虚拟网卡切换全流程。",
+        "badge": "Windows代理客户端配置教程"
+      }
+    ],
+    "/guides/subscriptions/": [
+      {
+        "url": "/guides/articles/android-import-subscription-guide",
+        "title": "Android 如何导入订阅与防杀后台：v2rayNG / FlClash / Karing 实操与电池优化",
+        "primaryKeyword": "安卓代理软件导入订阅教程",
+        "searchIntent": "how-to",
+        "summary": "涵盖 v2rayNG 与多内核客户端的安装、订阅导入、国产 ROM 电池白名单设置与分应用代理实操。",
+        "badge": "安卓代理软件导入订阅教程"
+      },
+      {
+        "url": "/guides/articles/iphone-shadowrocket-add-sub",
+        "title": "iPhone 如何添加订阅与切区安全红线：禁登录系统 iCloud 与 Shadowrocket 规则更新",
+        "primaryKeyword": "iPhone小火箭添加订阅教程",
+        "searchIntent": "how-to",
+        "summary": "iPhone 端添加小火箭订阅实操，特别警示仅限在 App Store 登录切区、严禁在系统设置登录他人 iCloud 的安全红线。",
+        "badge": "iPhone小火箭添加订阅教程"
+      }
+    ],
+    "/guides/split-routing/": [
+      {
+        "url": "/guides/articles/verify-proxy-is-working",
+        "title": "如何确认客户端分流与 DNS 设置已经生效：三项可验证检查路径与退出回滚",
+        "primaryKeyword": "怎么确认代理分流设置生效",
+        "searchIntent": "how-to",
+        "summary": "提供国内 IP 直连、海外落地检测与 DNS 泄漏测试三项可观测检查路径，附带退出代理软件后断网一分钟回滚步骤。",
+        "badge": "怎么确认代理分流设置生效"
+      }
+    ],
+    "/security/shutdown/": [
+      {
+        "url": "/security/articles/what-to-do-if-airport-stops",
+        "title": "机场突然停止服务应该怎么办：先排本地故障再取证止损与切换备用方案",
+        "primaryKeyword": "机场突然停运怎么办",
+        "searchIntent": "troubleshooting",
+        "summary": "面对节点全红与服务失联，先排查本地系统与网络，三方交叉核验真假跑路，并执行留证止损与备用切换。",
+        "badge": "机场突然停运怎么办"
+      }
+    ],
+    "/security/avoid-pitfalls/": [
+      {
+        "url": "/security/articles/long-term-prepaid-risks",
+        "title": "长期预付年付机场套餐有哪些风险：沉没成本、不退款条款与 2026-08-09 历史品牌启示",
+        "primaryKeyword": "机场年付长期套餐风险",
+        "searchIntent": "informational",
+        "summary": "剖析长期大额预付的三大沉没陷阱，审计 31 家品牌不退款条款现状，结合历史停运案例建立低试错决策体系。",
+        "badge": "机场年付长期套餐风险"
+      }
+    ],
+    "/security/refund/": [
+      {
+        "url": "/security/articles/how-to-preserve-payment-evidence",
+        "title": "如何保留付款记录与工单沟通证据：订单流水、脱敏截图与售后争议应对",
+        "primaryKeyword": "机场付款记录与证据留存",
+        "searchIntent": "how-to",
+        "summary": "提供支付流水留存、工单沟通脱敏截图规范与重复扣费申诉模板，明确虚拟数字商品的维权与止损边界。",
+        "badge": "机场付款记录与证据留存"
+      }
+    ],
+    "/security/alternatives/": [
+      {
+        "url": "/security/articles/checklist-before-switching-airport",
+        "title": "机场服务更换前应该检查什么：防同系套娃、协议兼容性与配置平滑迁移清单",
+        "primaryKeyword": "更换机场前检查清单",
+        "searchIntent": "checklist",
+        "summary": "换新机场前必做的五项核验：识别同系换壳盘、核对客户端与协议支持、旧订阅备份与平滑迁移清单。",
+        "badge": "更换机场前检查清单"
+      }
+    ],
+    "/troubleshooting/cannot-connect/": [
+      {
+        "url": "/troubleshooting/articles/android-v2rayng-clash-disconnect",
+        "title": "安卓 v2rayNG 与 Clash Meta for Android 节点失效与后台断连排查",
+        "primaryKeyword": "安卓 v2rayNG Clash Meta 后台断连节点失效",
+        "searchIntent": "troubleshooting",
+        "summary": "排查 Android 设备上 v2rayNG 与 Clash Meta for Android 锁屏断流、后台被杀、VpnService 被抢占及节点假死的系统设置与保活路径。",
+        "badge": "安卓 v2rayNG Clash Meta 后台断连节点失效"
+      },
+      {
+        "url": "/troubleshooting/articles/connected-no-internet",
+        "title": "节点已连接但所有网页打不开排查：系统代理、端口冲突与环路修复",
+        "primaryKeyword": "节点已连接但所有网页打不开",
+        "searchIntent": "troubleshooting",
+        "summary": "解决代理节点延迟正常、客户端显示已连接但所有国内和海外网页均无法打开的故障，深入排查系统代理未接管、残留旧端口、端口占用与路由环路问题。",
+        "badge": "节点已连接但所有网页打不开"
+      },
+      {
+        "url": "/troubleshooting/articles/specific-sites-unreachable",
+        "title": "仅个别网站或 AI 工具打不开、与浏览器结果不一致排查指南",
+        "primaryKeyword": "个别网站AI工具打不开浏览器不一致",
+        "searchIntent": "troubleshooting",
+        "summary": "解决大部分海外网页正常但 ChatGPT、Claude、Gemini、Netflix 等个别站点或 AI 工具打不开，以及终端 curl 与浏览器、App 表现不一致的根因排查。",
+        "badge": "个别网站AI工具打不开浏览器不一致"
+      },
+      {
+        "url": "/troubleshooting/articles/time-sync-tls-cert-error",
+        "title": "系统时间不同步导致 VLESS 与 TLS 握手失败校准指南",
+        "primaryKeyword": "系统时间不同步 VLESS TLS 握手失败校准",
+        "searchIntent": "troubleshooting",
+        "summary": "详解系统时间偏差引起 VLESS、VMess、Trojan、TLS 证书校验及订阅更新全部失败的底层原理，并提供 Windows、macOS、Linux、OpenWrt、iOS、Android 校准与回滚方法。",
+        "badge": "系统时间不同步 VLESS TLS 握手失败校准"
+      },
+      {
+        "url": "/troubleshooting/articles/tun-not-working",
+        "title": "TUN 模式开启无效怎么修：虚拟网卡冲突与服务授权排查",
+        "primaryKeyword": "TUN模式开启无效",
+        "searchIntent": "troubleshooting",
+        "summary": "针对 Clash Verge Rev、Mihomo 与 v2rayN 开启 TUN 模式后流量仍直连或直接断网的问题，按虚拟网卡驱动、服务模式授权、路由环路与各平台权限分层排查并附回滚方案。",
+        "badge": "TUN模式开启无效"
+      },
+      {
+        "url": "/troubleshooting/articles/tun-vs-system-proxy",
+        "title": "TUN 模式与系统代理有什么区别：适用场景与切换断网修复",
+        "primaryKeyword": "TUN模式与系统代理区别",
+        "searchIntent": "troubleshooting",
+        "summary": "深入解析 TUN 虚拟网卡模式与 HTTP/SOCKS 系统代理的底层机制差异、各自适用场景，以及在 Clash Verge Rev、v2rayN 中切换模式后出现全网断连的修复方法。",
+        "badge": "TUN模式与系统代理区别"
+      },
+      {
+        "url": "/troubleshooting/articles/v2rayn-system-proxy-fail",
+        "title": "v2rayN 已运行但浏览器不走代理或系统代理自动还原怎么修",
+        "primaryKeyword": "v2rayN系统代理自动还原",
+        "searchIntent": "troubleshooting",
+        "summary": "排查 v2rayN 核心已正常启动且测速有延迟，但浏览器流量依然直连或系统代理开关在几秒内自动被还原的原因，覆盖状态栏设置、浏览器插件抢占、企业组策略与注册表监控回滚方案。",
+        "badge": "v2rayN系统代理自动还原"
+      }
+    ],
+    "/troubleshooting/slow-network/": [
+      {
+        "url": "/troubleshooting/articles/bandwidth-multiplier-speedtest-diff",
+        "title": "为何客户端测速与实际下载/网页体感差异大及倍率计算详解",
+        "primaryKeyword": "客户端测速与实际下载速度差异倍率计算",
+        "searchIntent": "troubleshooting",
+        "summary": "拆解客户端并发测速（如 Miaoko/多线程测试）、单线程网页下载体感与真实视频流之间的速度落差原因，并详细说明 0.5x-5x 线路倍率计费对剩余流量的影响。",
+        "badge": "客户端测速与实际下载速度差异倍率计算"
+      },
+      {
+        "url": "/troubleshooting/articles/high-latency-packet-loss-peak",
+        "title": "晚高峰高延迟、丢包与卡顿定位：本地宽带、中转与落地瓶颈区分",
+        "primaryKeyword": "晚高峰代理高延迟丢包卡顿定位",
+        "searchIntent": "troubleshooting",
+        "summary": "系统定位每晚 20:00-23:00 晚高峰代理延迟飙升、丢包与网页卡顿的真实瓶颈，教你通过分段测量区分本地 Wi-Fi/宽带、中转入口与远端落地服务器故障。",
+        "badge": "晚高峰代理高延迟丢包卡顿定位"
+      },
+      {
+        "url": "/troubleshooting/articles/udp-nat-firewall-blocks",
+        "title": "UDP 转发失败、NAT 类型受限与防火墙阻断排查指南",
+        "primaryKeyword": "代理 UDP 转发失败 NAT 类型防火墙阻断排查",
+        "searchIntent": "troubleshooting",
+        "summary": "排查代理环境下游戏联机、语音通话、HTTP/3 (QUIC) 及 Hysteria2/TUIC 无法连接或频繁丢包的 UDP 转发、NAT 类型与本地/运营商防火墙限制问题。",
+        "badge": "代理 UDP 转发失败 NAT 类型防火墙阻断排查"
+      }
+    ],
+    "/troubleshooting/app-not-starting/": [
+      {
+        "url": "/troubleshooting/articles/clash-verge-mihomo-yaml-fail",
+        "title": "Mihomo 核心启动失败与 YAML 配置报错排查：语法、端口与规则修复",
+        "primaryKeyword": "Mihomo核心启动失败YAML报错",
+        "searchIntent": "troubleshooting",
+        "summary": "深入排查 Clash Verge Rev、FlClash、OpenClash 等客户端出现 Mihomo 核心启动失败及 YAML 语法报错的原因，覆盖缩进校验、废弃字段清理、Geo 数据库缺失与 mihomo -t 命令行自检。",
+        "badge": "Mihomo核心启动失败YAML报错"
+      },
+      {
+        "url": "/troubleshooting/articles/clash-verge-startup-fail",
+        "title": "Clash Verge Rev 无法启动或白屏怎么修：WebView2 与权限异常排查",
+        "primaryKeyword": "Clash Verge Rev 无法启动白屏",
+        "searchIntent": "troubleshooting",
+        "summary": "针对 Clash Verge Rev 在 Windows 打不开、白屏卡死、macOS 提示损坏或架构不匹配、Linux WebKitGTK 黑屏等问题，提供 WebView2 修复、残留进程清理、配置文件隔离与完整回滚方案。",
+        "badge": "Clash Verge Rev 无法启动白屏"
+      },
+      {
+        "url": "/troubleshooting/articles/client-migration-backup",
+        "title": "从旧客户端、Clash for Windows 与 Mihomo Party 安全迁移并备份配置",
+        "primaryKeyword": "Clash for Windows Mihomo Party 迁移备份配置",
+        "searchIntent": "troubleshooting",
+        "summary": "指导用户从已停止维护的旧客户端或 Clash for Windows、Mihomo Party 等向仍在活跃维护的新客户端平滑迁移，涵盖目录备份、配置兼容性处理与完整回滚方案。",
+        "badge": "Clash for Windows Mihomo Party 迁移备份配置"
+      },
+      {
+        "url": "/troubleshooting/articles/v2rayn-core-load-fail",
+        "title": "v2rayN 更新失败与核心无法加载怎么修：Xray/sing-box 与 .NET 运行时修复",
+        "primaryKeyword": "v2rayN核心无法加载更新失败",
+        "searchIntent": "troubleshooting",
+        "summary": "解决 v2rayN 打不开、提示缺少 .NET 8 桌面运行时、更新内核失败以及启动节点时报 Xray/sing-box 核心无法加载的故障，附架构核对、权限排错与安全手动更新回滚指南。",
+        "badge": "v2rayN核心无法加载更新失败"
+      }
+    ],
+    "/troubleshooting/subscription-failure/": [
+      {
+        "url": "/troubleshooting/articles/cross-client-inconsistency",
+        "title": "同一订阅在不同客户端表现不一致：协议支持与 User-Agent 差异排查",
+        "primaryKeyword": "同一订阅不同客户端表现不一致 UA 协议差异",
+        "searchIntent": "troubleshooting",
+        "summary": "解析同一个机场订阅链接在 Clash Verge Rev、v2rayN、Shadowrocket、sing-box 与手机桌面端表现截然不同的底层原因：UA 下发分流、协议支持缺口与默认策略差异。",
+        "badge": "同一订阅不同客户端表现不一致 UA 协议差异"
+      },
+      {
+        "url": "/troubleshooting/articles/shadowrocket-import-rules",
+        "title": "Shadowrocket 小火箭无法导入订阅与分流规则不生效排查",
+        "primaryKeyword": "Shadowrocket 无法导入订阅分流规则不生效",
+        "searchIntent": "troubleshooting",
+        "summary": "系统排查 iOS/iPadOS 与 Apple Silicon Mac 上 Shadowrocket 小火箭订阅导入失败、解析空白、节点不更新及分流规则不生效的根因与修复步骤。",
+        "badge": "Shadowrocket 无法导入订阅分流规则不生效"
+      },
+      {
+        "url": "/troubleshooting/articles/sub-http-200-empty",
+        "title": "订阅 HTTP 200 但返回 0 字节或空白订阅排查指南",
+        "primaryKeyword": "订阅返回HTTP 200空白节点",
+        "searchIntent": "troubleshooting",
+        "summary": "诊断机场订阅更新返回 HTTP 200 OK 却解析出 0 个节点或空白配置的原因，涵盖 UA 校验、透明拦截页面、Base64/YAML 错配与终端脱敏抓包验证。",
+        "badge": "订阅返回HTTP 200空白节点"
+      },
+      {
+        "url": "/troubleshooting/articles/sub-http-401-403-404-503",
+        "title": "更新订阅失败：HTTP 401/403/404/503 与被重定向排查指南",
+        "primaryKeyword": "更新订阅失败401 403 404 503",
+        "searchIntent": "troubleshooting",
+        "summary": "系统排查更新代理订阅时遇到 HTTP 401、403、404、502/503 及 301/302 重定向的根因，区分 Token 失效、WAF 风控拦截、域名变更与客户端 UA 限制。",
+        "badge": "更新订阅失败401 403 404 503"
+      },
+      {
+        "url": "/troubleshooting/articles/sub-tls-dns-timeout",
+        "title": "更新订阅提示 TLS 证书错误、DNS 解析失败或超时排查指南",
+        "primaryKeyword": "更新订阅TLS证书错误DNS解析超时",
+        "searchIntent": "troubleshooting",
+        "summary": "解决订阅更新过程中的 x509 证书异常、SSL 握手失败、DNS lookup failed 与 connection timed out 问题，涵盖本地时间核对、SNI 阻断与借道更新策略。",
+        "badge": "更新订阅TLS证书错误DNS解析超时"
+      }
+    ],
+    "/troubleshooting/dns-error/": [
+      {
+        "url": "/troubleshooting/articles/dns-leak-hijack-fix",
+        "title": "DNS 污染与 DNS 泄漏怎么排查：代理环境标准 DNS 分流检查",
+        "primaryKeyword": "DNS污染与DNS泄漏排查",
+        "searchIntent": "troubleshooting",
+        "summary": "区分代理环境下的 DNS 污染、DNS 劫持与 DNS 泄漏，提供 Clash/Mihomo/sing-box 与浏览器 DoH、IPv6 DNS 的标准排查路径、命令行验证及系统 DNS 修改回滚方案。",
+        "badge": "DNS污染与DNS泄漏排查"
+      },
+      {
+        "url": "/troubleshooting/articles/fake-ip-explained-fix",
+        "title": "Fake-IP 原理与 198.18.0.1 异常修复：解决微信与局域网冲突",
+        "primaryKeyword": "Fake-IP 198.18.0.1异常",
+        "searchIntent": "troubleshooting",
+        "summary": "拆解 Fake-IP 假地址池（198.18.0.0/16）的运行原理，排查微信 PC 版断连、局域网设备访问失败、网段冲突以及关闭代理后 DNS 解析仍返回 198.18.x.x 的修复与回滚方法。",
+        "badge": "Fake-IP 198.18.0.1异常"
+      }
+    ],
+    "/troubleshooting/timeout/": [
+      {
+        "url": "/troubleshooting/articles/nodes-all-timeout",
+        "title": "所有节点同时超时（All Timeout）排查：本地时间、连通性与全局异常分流",
+        "primaryKeyword": "所有节点同时超时怎么办",
+        "searchIntent": "troubleshooting",
+        "summary": "快速定位代理客户端中全部节点同时显示 Timeout 或不可用的根因，区分本地系统时间偏差、本地断网/防火墙阻断、旧订阅失效与机场全局服务异常。",
+        "badge": "所有节点同时超时怎么办"
+      },
+      {
+        "url": "/troubleshooting/articles/nodes-partial-region-timeout",
+        "title": "仅单个节点或特定地区超时排查：节点维护、路由劣化与测速 0B 解读",
+        "primaryKeyword": "单个节点或特定地区超时测速0B",
+        "searchIntent": "troubleshooting",
+        "summary": "区分订阅中仅个别节点或某地区分组超时、测速显示 0B 的真实原因，涵盖单机维护、跨境光缆绕路劣化、特定协议不兼容与策略组故障转移配置。",
+        "badge": "单个节点或特定地区超时测速0B"
+      },
+      {
+        "url": "/troubleshooting/articles/quota-expired-vs-stale-config",
+        "title": "套餐到期、流量耗尽与客户端旧配置过时的快速区分指南",
+        "primaryKeyword": "套餐到期流量耗尽与旧配置过时区分",
+        "searchIntent": "troubleshooting",
+        "summary": "快速判断节点突然全断或订阅失效究竟是因为套餐到期、流量用尽（含高倍率消耗），还是服务端升级端口/更换域名导致本地客户端配置过时。",
+        "badge": "套餐到期流量耗尽与旧配置过时区分"
+      }
+    ]
+  },
+  "byArticle": {
+    "/airport/articles/how-to-judge-peak-stability": {
+      "url": "/airport/articles/how-to-judge-peak-stability",
+      "title": "如何判断机场晚高峰是否稳定：从 RTT/HTTPS 延迟/0B 异常与 7 天实测法判断",
+      "parentTopic": "/airport/stable/",
+      "parentTopicName": "稳定机场标准",
+      "primaryKeyword": "如何判断机场晚高峰稳定性",
+      "relatedArticles": [
+        {
+          "url": "/airport/articles/more-nodes-better-myth",
+          "title": "机场节点数量越多越好吗：60+ 节点重复复用 vs 有效落地与负载均衡"
+        },
+        {
+          "url": "/routes/articles/how-to-spot-unverified-iepl",
+          "title": "如何识别未经验证的专线宣传：比对 2026-10-19 趋同表与 0B/晚高峰丢包证据"
+        },
+        {
+          "url": "/troubleshooting/articles/nodes-partial-region-timeout",
+          "title": "仅单个节点或特定地区超时排查：节点维护、路由劣化与测速 0B 解读"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/wuyou/",
+          "name": "无忧链接"
+        },
+        {
+          "url": "/reviews/weifeng/",
+          "name": "微风网络"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/weifeng-vs-wuyou/",
+          "title": "微风网络 vs 无忧链接 对比评测"
+        }
+      ]
+    },
+    "/airport/articles/more-nodes-better-myth": {
+      "url": "/airport/articles/more-nodes-better-myth",
+      "title": "机场节点数量越多越好吗：60+ 节点重复复用 vs 有效落地与负载均衡",
+      "parentTopic": "/airport/airport-recommendation/",
+      "parentTopicName": "机场推荐总览",
+      "primaryKeyword": "机场节点数量越多越好吗",
+      "relatedArticles": [
+        {
+          "url": "/airport/articles/how-to-judge-peak-stability",
+          "title": "如何判断机场晚高峰是否稳定：从 RTT/HTTPS 延迟/0B 异常与 7 天实测法判断"
+        },
+        {
+          "url": "/airport/articles/multi-device-airport-selection",
+          "title": "多设备用户如何选择机场：设备数限制、不限设备宣称与软路由并发策略"
+        },
+        {
+          "url": "/routes/articles/low-ping-vs-download-speed",
+          "title": "延迟低是否意味着下载速度快：RTT vs HTTPS Ping 与 32 线程测速 vs 单线程体感"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/sogo/",
+          "name": "SOGO云"
+        },
+        {
+          "url": "/reviews/yuzhou/",
+          "name": "宇宙云"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/sogo-vs-kexin/",
+          "title": "SOGO云 vs 可信云 对比评测"
+        }
+      ]
+    },
+    "/airport/articles/native-app-vs-third-party-beginners": {
+      "url": "/airport/articles/native-app-vs-third-party-beginners",
+      "title": "自研客户端机场适合新手吗：8 家仅专属端 vs 通用订阅的上手与锁定权衡",
+      "parentTopic": "/airport/easy-to-use/",
+      "parentTopicName": "好用的机场",
+      "primaryKeyword": "自研客户端机场适合新手吗",
+      "relatedArticles": [
+        {
+          "url": "/airport/articles/multi-device-airport-selection",
+          "title": "多设备用户如何选择机场：设备数限制、不限设备宣称与软路由并发策略"
+        },
+        {
+          "url": "/clients/articles/clash-verge-rev-install-guide",
+          "title": "Clash Verge Rev 新手安装与订阅配置指南：内核切换、TUN 授权与分流设置"
+        },
+        {
+          "url": "/security/articles/checklist-before-switching-airport",
+          "title": "机场服务更换前应该检查什么：防同系套娃、协议兼容性与配置平滑迁移清单"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/feimao/",
+          "name": "飞猫云"
+        },
+        {
+          "url": "/reviews/yinxingren/",
+          "name": "隐形人"
+        },
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/guangsuyun-vs-feimao/",
+          "title": "光速云 vs 飞猫云 对比评测"
+        }
+      ]
+    },
+    "/airport/articles/multi-device-airport-selection": {
+      "url": "/airport/articles/multi-device-airport-selection",
+      "title": "多设备用户如何选择机场：设备数限制、不限设备宣称与软路由并发策略",
+      "parentTopic": "/airport/airport-recommendation/",
+      "parentTopicName": "机场推荐总览",
+      "primaryKeyword": "多设备用户如何选择机场",
+      "relatedArticles": [
+        {
+          "url": "/airport/articles/more-nodes-better-myth",
+          "title": "机场节点数量越多越好吗：60+ 节点重复复用 vs 有效落地与负载均衡"
+        },
+        {
+          "url": "/pricing/articles/is-100gb-enough-monthly",
+          "title": "100GB 与 300GB 流量够用多久及如何选择：按视频/AI/测速耗流实测拆解"
+        },
+        {
+          "url": "/guides/articles/windows-proxy-client-setup",
+          "title": "Windows 如何配置代理客户端：从校时、导入订阅到 Rule 模式与系统代理/TUN 切换"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/muguang/",
+          "name": "暮光加速"
+        },
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/ermao/",
+          "name": "二猫云"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/muguang-vs-yuzhou/",
+          "title": "暮光加速 vs 宇宙云 对比评测"
+        }
+      ]
+    },
+    "/pricing/articles/under-20-yuan-monthly-guide": {
+      "url": "/pricing/articles/under-20-yuan-monthly-guide",
+      "title": "20 元以内月付机场有哪些选择条件：14.9–20 元主力月付实算对比",
+      "parentTopic": "/pricing/monthly/",
+      "parentTopicName": "月付机场筛选",
+      "primaryKeyword": "20元以内月付机场怎么选",
+      "relatedArticles": [
+        {
+          "url": "/pricing/articles/annual-to-monthly-calculation",
+          "title": "机场年付折算月价怎么算：拆解光速云 99元/年、微风 137元/年、5.6 元集群折算陷阱"
+        },
+        {
+          "url": "/pricing/articles/is-100gb-enough-monthly",
+          "title": "100GB 与 300GB 流量够用多久及如何选择：按视频/AI/测速耗流实测拆解"
+        },
+        {
+          "url": "/pricing/articles/monthly-vs-non-expiring-value",
+          "title": "月付和不限时套餐哪个更划算：回本周期公式与停运沉没成本比较"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/ermao/",
+          "name": "二猫云"
+        },
+        {
+          "url": "/reviews/u1s1/",
+          "name": "U1S1"
+        },
+        {
+          "url": "/reviews/lingmao/",
+          "name": "灵猫网络"
+        },
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/guangsuyun-vs-ermao/",
+          "title": "光速云 vs 二猫云 对比评测"
+        }
+      ]
+    },
+    "/pricing/articles/annual-to-monthly-calculation": {
+      "url": "/pricing/articles/annual-to-monthly-calculation",
+      "title": "机场年付折算月价怎么算：拆解光速云 99元/年、微风 137元/年、5.6 元集群折算陷阱",
+      "parentTopic": "/pricing/budget/",
+      "parentTopicName": "便宜机场拆解",
+      "primaryKeyword": "机场年付折算月价计算方法",
+      "relatedArticles": [
+        {
+          "url": "/pricing/articles/under-20-yuan-monthly-guide",
+          "title": "20 元以内月付机场有哪些选择条件：14.9–20 元主力月付实算对比"
+        },
+        {
+          "url": "/pricing/articles/monthly-vs-non-expiring-value",
+          "title": "月付和不限时套餐哪个更划算：回本周期公式与停运沉没成本比较"
+        },
+        {
+          "url": "/security/articles/long-term-prepaid-risks",
+          "title": "长期预付年付机场套餐有哪些风险：沉没成本、不退款条款与 2026-08-09 历史品牌启示"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/weifeng/",
+          "name": "微风网络"
+        },
+        {
+          "url": "/reviews/shandianshu/",
+          "name": "闪电鼠"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/shandianshu-vs-dalaoyun/",
+          "title": "闪电鼠 vs 大佬云 对比评测"
+        }
+      ]
+    },
+    "/pricing/articles/is-100gb-enough-monthly": {
+      "url": "/pricing/articles/is-100gb-enough-monthly",
+      "title": "100GB 与 300GB 流量够用多久及如何选择：按视频/AI/测速耗流实测拆解",
+      "parentTopic": "/pricing/value/",
+      "parentTopicName": "性价比评估框架",
+      "primaryKeyword": "机场100GB流量够用多久",
+      "relatedArticles": [
+        {
+          "url": "/pricing/articles/under-20-yuan-monthly-guide",
+          "title": "20 元以内月付机场有哪些选择条件：14.9–20 元主力月付实算对比"
+        },
+        {
+          "url": "/pricing/articles/monthly-vs-non-expiring-value",
+          "title": "月付和不限时套餐哪个更划算：回本周期公式与停运沉没成本比较"
+        },
+        {
+          "url": "/routes/articles/low-ping-vs-download-speed",
+          "title": "延迟低是否意味着下载速度快：RTT vs HTTPS Ping 与 32 线程测速 vs 单线程体感"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/ermao/",
+          "name": "二猫云"
+        },
+        {
+          "url": "/reviews/weitu/",
+          "name": "唯兔云"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/guangsuyun-vs-ermao/",
+          "title": "光速云 vs 二猫云 对比评测"
+        }
+      ]
+    },
+    "/pricing/articles/monthly-vs-non-expiring-value": {
+      "url": "/pricing/articles/monthly-vs-non-expiring-value",
+      "title": "月付和不限时套餐哪个更划算：回本周期公式与停运沉没成本比较",
+      "parentTopic": "/pricing/non-expiring/",
+      "parentTopicName": "不限时流量包",
+      "primaryKeyword": "月付和不限时机场哪个划算",
+      "relatedArticles": [
+        {
+          "url": "/pricing/articles/under-20-yuan-monthly-guide",
+          "title": "20 元以内月付机场有哪些选择条件：14.9–20 元主力月付实算对比"
+        },
+        {
+          "url": "/pricing/articles/annual-to-monthly-calculation",
+          "title": "机场年付折算月价怎么算：拆解光速云 99元/年、微风 137元/年、5.6 元集群折算陷阱"
+        },
+        {
+          "url": "/security/articles/long-term-prepaid-risks",
+          "title": "长期预付年付机场套餐有哪些风险：沉没成本、不退款条款与 2026-08-09 历史品牌启示"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/ermao/",
+          "name": "二猫云"
+        },
+        {
+          "url": "/reviews/yifan/",
+          "name": "一翻云"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/guangsuyun-vs-ermao/",
+          "title": "光速云 vs 二猫云 对比评测"
+        }
+      ]
+    },
+    "/brands/articles/verify-official-site-vs-aff": {
+      "url": "/brands/articles/verify-official-site-vs-aff",
+      "title": "如何判断机场官网是否真实与识别 AFF 链接：揭秘注册跳板域名、code 参数与链接格式异常",
+      "parentTopic": "/brands/official-sites/",
+      "parentTopicName": "官网与入口核验",
+      "primaryKeyword": "如何判断机场官网真伪",
+      "relatedArticles": [
+        {
+          "url": "/brands/articles/verify-brand-operating-years",
+          "title": "机场品牌的运营时间如何核实：区分开业年份宣称、历史档案与实际可证日期"
+        },
+        {
+          "url": "/brands/articles/coupon-code-not-working-fix",
+          "title": "机场优惠码无法使用怎么办与双码冲突排查：特价年付排除规则与 6 家双码记录"
+        },
+        {
+          "url": "/security/articles/what-to-do-if-airport-stops",
+          "title": "机场突然停止服务应该怎么办：先排本地故障再取证止损与切换备用方案"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/yunjiexian/",
+          "name": "云界线"
+        },
+        {
+          "url": "/reviews/huanqiuti/",
+          "name": "环球梯"
+        },
+        {
+          "url": "/reviews/liulianyun/",
+          "name": "榴莲云"
+        },
+        {
+          "url": "/reviews/firefly/",
+          "name": "Firefly"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/firefly-vs-lingmao/",
+          "title": "Firefly vs 灵猫网络 对比评测"
+        }
+      ]
+    },
+    "/brands/articles/verify-brand-operating-years": {
+      "url": "/brands/articles/verify-brand-operating-years",
+      "title": "机场品牌的运营时间如何核实：区分开业年份宣称、历史档案与实际可证日期",
+      "parentTopic": "/brands/directory/",
+      "parentTopicName": "31家品牌数据库",
+      "primaryKeyword": "机场品牌运营时间核实方法",
+      "relatedArticles": [
+        {
+          "url": "/brands/articles/verify-official-site-vs-aff",
+          "title": "如何判断机场官网是否真实与识别 AFF 链接：揭秘注册跳板域名、code 参数与链接格式异常"
+        },
+        {
+          "url": "/brands/articles/maintenance-vs-shutdown-signs",
+          "title": "品牌临时维护与停止运营有什么区别：三方交叉核验流程与假失联判断"
+        },
+        {
+          "url": "/airport/articles/how-to-judge-peak-stability",
+          "title": "如何判断机场晚高峰是否稳定：从 RTT/HTTPS 延迟/0B 异常与 7 天实测法判断"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/xingdaomeng/",
+          "name": "星岛梦"
+        },
+        {
+          "url": "/reviews/lingdong/",
+          "name": "灵动云"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/feimao-vs-xingdaomeng/",
+          "title": "飞猫云 vs 星岛梦 对比评测"
+        }
+      ]
+    },
+    "/brands/articles/coupon-code-not-working-fix": {
+      "url": "/brands/articles/coupon-code-not-working-fix",
+      "title": "机场优惠码无法使用怎么办与双码冲突排查：特价年付排除规则与 6 家双码记录",
+      "parentTopic": "/brands/promotions/",
+      "parentTopicName": "优惠码与冲突记录",
+      "primaryKeyword": "机场优惠码无法使用怎么办",
+      "relatedArticles": [
+        {
+          "url": "/brands/articles/verify-official-site-vs-aff",
+          "title": "如何判断机场官网是否真实与识别 AFF 链接：揭秘注册跳板域名、code 参数与链接格式异常"
+        },
+        {
+          "url": "/pricing/articles/under-20-yuan-monthly-guide",
+          "title": "20 元以内月付机场有哪些选择条件：14.9–20 元主力月付实算对比"
+        },
+        {
+          "url": "/pricing/articles/annual-to-monthly-calculation",
+          "title": "机场年付折算月价怎么算：拆解光速云 99元/年、微风 137元/年、5.6 元集群折算陷阱"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/lingmao/",
+          "name": "灵猫网络"
+        },
+        {
+          "url": "/reviews/yinxingren/",
+          "name": "隐形人"
+        },
+        {
+          "url": "/reviews/yifan/",
+          "name": "一翻云"
+        },
+        {
+          "url": "/reviews/sogo/",
+          "name": "SOGO云"
+        },
+        {
+          "url": "/reviews/quanqiu/",
+          "name": "全球云"
+        },
+        {
+          "url": "/reviews/muguang/",
+          "name": "暮光加速"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/firefly-vs-lingmao/",
+          "title": "Firefly vs 灵猫网络 对比评测"
+        }
+      ]
+    },
+    "/brands/articles/maintenance-vs-shutdown-signs": {
+      "url": "/brands/articles/maintenance-vs-shutdown-signs",
+      "title": "品牌临时维护与停止运营有什么区别：三方交叉核验流程与假失联判断",
+      "parentTopic": "/brands/incidents/",
+      "parentTopicName": "运营风险与跑路",
+      "primaryKeyword": "机场维护与停止运营区别",
+      "relatedArticles": [
+        {
+          "url": "/brands/articles/verify-brand-operating-years",
+          "title": "机场品牌的运营时间如何核实：区分开业年份宣称、历史档案与实际可证日期"
+        },
+        {
+          "url": "/security/articles/what-to-do-if-airport-stops",
+          "title": "机场突然停止服务应该怎么办：先排本地故障再取证止损与切换备用方案"
+        },
+        {
+          "url": "/troubleshooting/articles/nodes-all-timeout",
+          "title": "所有节点同时超时（All Timeout）排查：本地时间、连通性与全局异常分流"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/lingdong/",
+          "name": "灵动云"
+        },
+        {
+          "url": "/reviews/langwang/",
+          "name": "浪网"
+        },
+        {
+          "url": "/reviews/edgenova/",
+          "name": "边缘节点 EdgeNova"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/shandianshu-vs-dalaoyun/",
+          "title": "闪电鼠 vs 大佬云 对比评测"
+        }
+      ]
+    },
+    "/vpn/articles/vpn-vs-proxy-architecture": {
+      "url": "/vpn/articles/vpn-vs-proxy-architecture",
+      "title": "VPN 与代理有什么区别：底层协议、全局加密、分流能力与合规边界深度对比",
+      "parentTopic": "/vpn/recommendations/",
+      "parentTopicName": "VPN 场景推荐",
+      "primaryKeyword": "VPN和机场代理有什么区别",
+      "relatedArticles": [
+        {
+          "url": "/vpn/articles/vpn-privacy-policy-audit",
+          "title": "免费 VPN 有哪些限制与隐私风险：DNS 泄漏、日志转卖与明文劫持技术真相"
+        },
+        {
+          "url": "/troubleshooting/articles/udp-nat-firewall-blocks",
+          "title": "VPN 和游戏加速器有什么不同：UDP 转发、NAT 类型与延迟抖动机制剖析"
+        },
+        {
+          "url": "/guides/articles/windows-proxy-client-setup",
+          "title": "Windows 如何配置代理客户端：从校时、导入订阅到 Rule 模式与系统代理/TUN 切换"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/guangsuyun-vs-feimao/",
+          "title": "光速云 vs 飞猫云 对比评测"
+        }
+      ]
+    },
+    "/vpn/articles/vpn-privacy-policy-audit": {
+      "url": "/vpn/articles/vpn-privacy-policy-audit",
+      "title": "免费 VPN 有哪些限制与隐私风险：DNS 泄漏、日志转卖与明文劫持技术真相",
+      "parentTopic": "/vpn/free/",
+      "parentTopicName": "免费 VPN 风险",
+      "primaryKeyword": "免费VPN有什么风险和限制",
+      "relatedArticles": [
+        {
+          "url": "/vpn/articles/vpn-vs-proxy-architecture",
+          "title": "VPN 与代理有什么区别：底层协议、全局加密、分流能力与合规边界深度对比"
+        },
+        {
+          "url": "/pricing/articles/under-20-yuan-monthly-guide",
+          "title": "20 元以内月付机场有哪些选择条件：14.9–20 元主力月付实算对比"
+        },
+        {
+          "url": "/security/articles/long-term-prepaid-risks",
+          "title": "长期预付年付机场套餐有哪些风险：沉没成本、不退款条款与 2026-08-09 历史品牌启示"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/weifeng-vs-wuyou/",
+          "title": "微风网络 vs 无忧链接 对比评测"
+        }
+      ]
+    },
+    "/vpn/articles/mobile-vpn-auto-disconnect": {
+      "url": "/vpn/articles/mobile-vpn-auto-disconnect",
+      "title": "手机 VPN 为什么会自动断开：iOS NetworkExtension 与 Android 电池优化深度排查",
+      "parentTopic": "/vpn/mobile/",
+      "parentTopicName": "手机 VPN 机制",
+      "primaryKeyword": "手机VPN自动断开排查",
+      "relatedArticles": [
+        {
+          "url": "/guides/articles/android-import-subscription-guide",
+          "title": "Android 如何导入订阅与防杀后台：v2rayNG / FlClash / Karing 实操与电池优化"
+        },
+        {
+          "url": "/guides/articles/iphone-shadowrocket-add-sub",
+          "title": "Shadowrocket 如何添加订阅与分流配置：美区 Apple ID 获取、规则更新与防断流"
+        },
+        {
+          "url": "/troubleshooting/articles/android-v2rayng-clash-disconnect",
+          "title": "安卓 v2rayNG 与 Clash Meta for Android 节点失效与后台断连排查"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/udp-nat-firewall-blocks": {
+      "url": "/troubleshooting/articles/udp-nat-firewall-blocks",
+      "title": "UDP 转发失败、NAT 类型受限与防火墙阻断排查指南",
+      "parentTopic": "/troubleshooting/slow-network/",
+      "parentTopicName": "slow-network",
+      "primaryKeyword": "代理 UDP 转发失败 NAT 类型防火墙阻断排查",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/slow-network/",
+          "title": "/troubleshooting/slow-network/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/clients/articles/clash-verge-rev-install-guide": {
+      "url": "/clients/articles/clash-verge-rev-install-guide",
+      "title": "Clash Verge Rev 新手安装与订阅配置指南：内核切换、TUN 授权与分流设置",
+      "parentTopic": "/clients/clash-verge/",
+      "parentTopicName": "Clash Verge Rev",
+      "primaryKeyword": "Clash Verge Rev新手安装配置教程",
+      "relatedArticles": [
+        {
+          "url": "/clients/articles/flclash-vs-clash-verge-rev",
+          "title": "Mihomo 和 Clash 有什么关系：内核演进、YAML 规则兼容与衍生客户端生态辨析"
+        },
+        {
+          "url": "/guides/articles/windows-proxy-client-setup",
+          "title": "Windows 如何配置代理客户端：从校时、导入订阅到 Rule 模式与系统代理/TUN 切换"
+        },
+        {
+          "url": "/troubleshooting/articles/clash-verge-startup-fail",
+          "title": "Clash Verge Rev 无法启动或白屏怎么修：WebView2 与权限异常排查"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/guangsuyun-vs-feimao/",
+          "title": "光速云 vs 飞猫云 对比评测"
+        }
+      ]
+    },
+    "/troubleshooting/articles/v2rayn-core-load-fail": {
+      "url": "/troubleshooting/articles/v2rayn-core-load-fail",
+      "title": "v2rayN 更新失败与核心无法加载怎么修：Xray/sing-box 与 .NET 运行时修复",
+      "parentTopic": "/troubleshooting/app-not-starting/",
+      "parentTopicName": "app-not-starting",
+      "primaryKeyword": "v2rayN核心无法加载更新失败",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/app-not-starting/",
+          "title": "/troubleshooting/app-not-starting/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/guides/articles/iphone-shadowrocket-add-sub": {
+      "url": "/guides/articles/iphone-shadowrocket-add-sub",
+      "title": "iPhone 如何添加订阅与切区安全红线：禁登录系统 iCloud 与 Shadowrocket 规则更新",
+      "parentTopic": "/guides/subscriptions/",
+      "parentTopicName": "机场订阅教程",
+      "primaryKeyword": "iPhone小火箭添加订阅教程",
+      "relatedArticles": [
+        {
+          "url": "/guides/articles/iphone-shadowrocket-add-sub",
+          "title": "Shadowrocket 如何添加订阅与分流配置：美区 Apple ID 获取、规则更新与防断流"
+        },
+        {
+          "url": "/guides/articles/verify-proxy-is-working",
+          "title": "如何确认客户端分流与 DNS 设置已经生效：三项可验证检查路径与退出回滚"
+        },
+        {
+          "url": "/security/articles/what-to-do-if-airport-stops",
+          "title": "机场突然停止服务应该怎么办：先排本地故障再取证止损与切换备用方案"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/clients/articles/flclash-vs-clash-verge-rev": {
+      "url": "/clients/articles/flclash-vs-clash-verge-rev",
+      "title": "Mihomo 和 Clash 有什么关系：内核演进、YAML 规则兼容与衍生客户端生态辨析",
+      "parentTopic": "/clients/mihomo/",
+      "parentTopicName": "Mihomo 内核",
+      "primaryKeyword": "Mihomo和Clash有什么关系",
+      "relatedArticles": [
+        {
+          "url": "/clients/articles/clash-verge-rev-install-guide",
+          "title": "Clash Verge Rev 新手安装与订阅配置指南：内核切换、TUN 授权与分流设置"
+        },
+        {
+          "url": "/guides/articles/verify-proxy-is-working",
+          "title": "如何确认客户端分流与 DNS 设置已经生效：三项可验证检查路径与退出回滚"
+        },
+        {
+          "url": "/troubleshooting/articles/clash-verge-mihomo-yaml-fail",
+          "title": "Mihomo 核心启动失败与 YAML 配置报错排查：语法、端口与规则修复"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/ai-media/articles/chatgpt-region-unsupported-fix": {
+      "url": "/ai-media/articles/chatgpt-region-unsupported-fix",
+      "title": "ChatGPT 提示地区不支持怎么办：OpenAI IP 风控、仅 APP(HK) 识别与静态分流方案",
+      "parentTopic": "/ai-media/chatgpt/",
+      "parentTopicName": "ChatGPT 机场适配",
+      "primaryKeyword": "ChatGPT提示地区不支持解决办法",
+      "relatedArticles": [
+        {
+          "url": "/ai-media/articles/claude-connection-ban-risks",
+          "title": "Claude 连接失败如何排查：Anthropic 机房 IP 判定、切节点封号风险与出站规避"
+        },
+        {
+          "url": "/ai-media/articles/gemini-something-went-wrong-fix",
+          "title": "Gemini 出现 Something went wrong 怎么办：Google GeoIP 送中检测与 AI Studio 域名分流"
+        },
+        {
+          "url": "/guides/articles/verify-proxy-is-working",
+          "title": "如何确认客户端分流与 DNS 设置已经生效：三项可验证检查路径与退出回滚"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/sujie/",
+          "name": "速界"
+        },
+        {
+          "url": "/reviews/lingdong/",
+          "name": "灵动云"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/guangsuyun-vs-feimao/",
+          "title": "光速云 vs 飞猫云 对比评测"
+        }
+      ]
+    },
+    "/ai-media/articles/claude-connection-ban-risks": {
+      "url": "/ai-media/articles/claude-connection-ban-risks",
+      "title": "Claude 连接失败如何排查：Anthropic 机房 IP 判定、切节点封号风险与出站规避",
+      "parentTopic": "/ai-media/claude/",
+      "parentTopicName": "Claude 节点风控",
+      "primaryKeyword": "Claude连接失败与节点封号排查",
+      "relatedArticles": [
+        {
+          "url": "/ai-media/articles/chatgpt-region-unsupported-fix",
+          "title": "ChatGPT 提示地区不支持怎么办：OpenAI IP 风控、仅 APP(HK) 识别与静态分流方案"
+        },
+        {
+          "url": "/ai-media/articles/gemini-something-went-wrong-fix",
+          "title": "Gemini 出现 Something went wrong 怎么办：Google GeoIP 送中检测与 AI Studio 域名分流"
+        },
+        {
+          "url": "/routes/articles/native-ip-vs-datacenter-ip",
+          "title": "原生 IP 和机房 IP 有什么区别：Miaoko IPType/IPRisk 解读与解锁边界"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/kexin/",
+          "name": "可信云"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/sogo-vs-kexin/",
+          "title": "SOGO云 vs 可信云 对比评测"
+        }
+      ]
+    },
+    "/ai-media/articles/gemini-something-went-wrong-fix": {
+      "url": "/ai-media/articles/gemini-something-went-wrong-fix",
+      "title": "Gemini 出现 Something went wrong 怎么办：Google GeoIP 送中检测与 AI Studio 域名分流",
+      "parentTopic": "/ai-media/gemini/",
+      "parentTopicName": "Gemini 区域可用性",
+      "primaryKeyword": "Gemini报错Something went wrong解决",
+      "relatedArticles": [
+        {
+          "url": "/ai-media/articles/chatgpt-region-unsupported-fix",
+          "title": "ChatGPT 提示地区不支持怎么办：OpenAI IP 风控、仅 APP(HK) 识别与静态分流方案"
+        },
+        {
+          "url": "/ai-media/articles/netflix-originals-vs-full-unlock",
+          "title": "Netflix 原创内容和地区内容有什么区别：原生住宅 IP、DNS 解锁与送中判定辨析"
+        },
+        {
+          "url": "/routes/articles/low-ping-vs-download-speed",
+          "title": "延迟低是否意味着下载速度快：RTT vs HTTPS Ping 与 32 线程测速 vs 单线程体感"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/kexin/",
+          "name": "可信云"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/sogo-vs-kexin/",
+          "title": "SOGO云 vs 可信云 对比评测"
+        }
+      ]
+    },
+    "/ai-media/articles/netflix-originals-vs-full-unlock": {
+      "url": "/ai-media/articles/netflix-originals-vs-full-unlock",
+      "title": "Netflix 原创内容和地区内容有什么区别：原生住宅 IP、DNS 解锁与送中判定辨析",
+      "parentTopic": "/ai-media/netflix/",
+      "parentTopicName": "Netflix 解锁解析",
+      "primaryKeyword": "Netflix只能看自制剧怎么办",
+      "relatedArticles": [
+        {
+          "url": "/ai-media/articles/gemini-something-went-wrong-fix",
+          "title": "Gemini 出现 Something went wrong 怎么办：Google GeoIP 送中检测与 AI Studio 域名分流"
+        },
+        {
+          "url": "/routes/articles/native-ip-vs-datacenter-ip",
+          "title": "原生 IP 和机房 IP 有什么区别：Miaoko IPType/IPRisk 解读与解锁边界"
+        },
+        {
+          "url": "/routes/japan/",
+          "title": "/routes/japan/"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/lingdong/",
+          "name": "灵动云"
+        },
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/wuyou/",
+          "name": "无忧链接"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/weifeng-vs-wuyou/",
+          "title": "微风网络 vs 无忧链接 对比评测"
+        }
+      ]
+    },
+    "/routes/articles/iepl-vs-iplc-differences": {
+      "url": "/routes/articles/iepl-vs-iplc-differences",
+      "title": "IEPL 和 IPLC 有什么区别：二层以太网 vs 专线点对点架构与宣传辨析",
+      "parentTopic": "/routes/iepl/",
+      "parentTopicName": "IEPL 专线原理",
+      "primaryKeyword": "IEPL和IPLC有什么区别",
+      "relatedArticles": [
+        {
+          "url": "/routes/articles/how-to-spot-unverified-iepl",
+          "title": "如何识别未经验证的专线宣传：比对 2026-10-19 趋同表与 0B/晚高峰丢包证据"
+        },
+        {
+          "url": "/routes/articles/low-ping-vs-download-speed",
+          "title": "延迟低是否意味着下载速度快：RTT vs HTTPS Ping 与 32 线程测速 vs 单线程体感"
+        },
+        {
+          "url": "/airport/articles/how-to-judge-peak-stability",
+          "title": "如何判断机场晚高峰是否稳定：从 RTT/HTTPS 延迟/0B 异常与 7 天实测法判断"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/weifeng/",
+          "name": "微风网络"
+        },
+        {
+          "url": "/reviews/wuyou/",
+          "name": "无忧链接"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/weifeng-vs-wuyou/",
+          "title": "微风网络 vs 无忧链接 对比评测"
+        }
+      ]
+    },
+    "/routes/articles/low-ping-vs-download-speed": {
+      "url": "/routes/articles/low-ping-vs-download-speed",
+      "title": "延迟低是否意味着下载速度快：RTT vs HTTPS Ping 与 32 线程测速 vs 单线程体感",
+      "parentTopic": "/routes/low-latency/",
+      "parentTopicName": "低延迟节点真相",
+      "primaryKeyword": "节点延迟低下载速度就快吗",
+      "relatedArticles": [
+        {
+          "url": "/routes/articles/iepl-vs-iplc-differences",
+          "title": "IEPL 和 IPLC 有什么区别：二层以太网 vs 专线点对点架构与宣传辨析"
+        },
+        {
+          "url": "/airport/articles/how-to-judge-peak-stability",
+          "title": "如何判断机场晚高峰是否稳定：从 RTT/HTTPS 延迟/0B 异常与 7 天实测法判断"
+        },
+        {
+          "url": "/pricing/articles/is-100gb-enough-monthly",
+          "title": "100GB 与 300GB 流量够用多久及如何选择：按视频/AI/测速耗流实测拆解"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/kexin/",
+          "name": "可信云"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/sogo-vs-kexin/",
+          "title": "SOGO云 vs 可信云 对比评测"
+        }
+      ]
+    },
+    "/routes/articles/native-ip-vs-datacenter-ip": {
+      "url": "/routes/articles/native-ip-vs-datacenter-ip",
+      "title": "原生 IP 和机房 IP 有什么区别：Miaoko IPType/IPRisk 解读与解锁边界",
+      "parentTopic": "/routes/",
+      "parentTopicName": "线路与节点",
+      "primaryKeyword": "原生IP和机房IP有什么区别",
+      "relatedArticles": [
+        {
+          "url": "/ai-media/articles/claude-connection-ban-risks",
+          "title": "Claude 连接失败如何排查：Anthropic 机房 IP 判定、切节点封号风险与出站规避"
+        },
+        {
+          "url": "/ai-media/articles/netflix-originals-vs-full-unlock",
+          "title": "Netflix 原创内容和地区内容有什么区别：原生住宅 IP、DNS 解锁与送中判定辨析"
+        },
+        {
+          "url": "/routes/articles/how-to-spot-unverified-iepl",
+          "title": "如何识别未经验证的专线宣传：比对 2026-10-19 趋同表与 0B/晚高峰丢包证据"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/routes/articles/how-to-spot-unverified-iepl": {
+      "url": "/routes/articles/how-to-spot-unverified-iepl",
+      "title": "如何识别未经验证的专线宣传：比对 2026-10-19 趋同表与 0B/晚高峰丢包证据",
+      "parentTopic": "/routes/iepl/",
+      "parentTopicName": "IEPL 专线原理",
+      "primaryKeyword": "如何识别虚假专线宣传",
+      "relatedArticles": [
+        {
+          "url": "/routes/articles/iepl-vs-iplc-differences",
+          "title": "IEPL 和 IPLC 有什么区别：二层以太网 vs 专线点对点架构与宣传辨析"
+        },
+        {
+          "url": "/airport/articles/how-to-judge-peak-stability",
+          "title": "如何判断机场晚高峰是否稳定：从 RTT/HTTPS 延迟/0B 异常与 7 天实测法判断"
+        },
+        {
+          "url": "/pricing/articles/annual-to-monthly-calculation",
+          "title": "机场年付折算月价怎么算：拆解光速云 99元/年、微风 137元/年、5.6 元集群折算陷阱"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/weifeng/",
+          "name": "微风网络"
+        },
+        {
+          "url": "/reviews/shandianshu/",
+          "name": "闪电鼠"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/shandianshu-vs-dalaoyun/",
+          "title": "闪电鼠 vs 大佬云 对比评测"
+        }
+      ]
+    },
+    "/guides/articles/windows-proxy-client-setup": {
+      "url": "/guides/articles/windows-proxy-client-setup",
+      "title": "Windows 如何配置代理客户端：从校时、导入订阅到 Rule 模式与系统代理/TUN 切换",
+      "parentTopic": "/guides/installation/",
+      "parentTopicName": "多平台安装指南",
+      "primaryKeyword": "Windows代理客户端配置教程",
+      "relatedArticles": [
+        {
+          "url": "/clients/articles/clash-verge-rev-install-guide",
+          "title": "Clash Verge Rev 新手安装与订阅配置指南：内核切换、TUN 授权与分流设置"
+        },
+        {
+          "url": "/guides/articles/verify-proxy-is-working",
+          "title": "如何确认客户端分流与 DNS 设置已经生效：三项可验证检查路径与退出回滚"
+        },
+        {
+          "url": "/troubleshooting/articles/time-sync-tls-cert-error",
+          "title": "系统时间不同步导致 VLESS 与 TLS 握手失败校准指南"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/guides/articles/android-import-subscription-guide": {
+      "url": "/guides/articles/android-import-subscription-guide",
+      "title": "Android 如何导入订阅与防杀后台：v2rayNG / FlClash / Karing 实操与电池优化",
+      "parentTopic": "/guides/subscriptions/",
+      "parentTopicName": "机场订阅教程",
+      "primaryKeyword": "安卓代理软件导入订阅教程",
+      "relatedArticles": [
+        {
+          "url": "/vpn/articles/mobile-vpn-auto-disconnect",
+          "title": "手机 VPN 为什么会自动断开：iOS NetworkExtension 与 Android 电池优化深度排查"
+        },
+        {
+          "url": "/guides/articles/verify-proxy-is-working",
+          "title": "如何确认客户端分流与 DNS 设置已经生效：三项可验证检查路径与退出回滚"
+        },
+        {
+          "url": "/troubleshooting/articles/android-v2rayng-clash-disconnect",
+          "title": "安卓 v2rayNG 与 Clash Meta for Android 节点失效与后台断连排查"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/guides/articles/verify-proxy-is-working": {
+      "url": "/guides/articles/verify-proxy-is-working",
+      "title": "如何确认客户端分流与 DNS 设置已经生效：三项可验证检查路径与退出回滚",
+      "parentTopic": "/guides/split-routing/",
+      "parentTopicName": "分流规则配置",
+      "primaryKeyword": "怎么确认代理分流设置生效",
+      "relatedArticles": [
+        {
+          "url": "/guides/articles/windows-proxy-client-setup",
+          "title": "Windows 如何配置代理客户端：从校时、导入订阅到 Rule 模式与系统代理/TUN 切换"
+        },
+        {
+          "url": "/troubleshooting/articles/connected-no-internet",
+          "title": "节点已连接但所有网页打不开排查：系统代理、端口冲突与环路修复"
+        },
+        {
+          "url": "/troubleshooting/articles/fake-ip-explained-fix",
+          "title": "Fake-IP 原理与 198.18.0.1 异常修复：解决微信与局域网冲突"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/security/articles/what-to-do-if-airport-stops": {
+      "url": "/security/articles/what-to-do-if-airport-stops",
+      "title": "机场突然停止服务应该怎么办：先排本地故障再取证止损与切换备用方案",
+      "parentTopic": "/security/shutdown/",
+      "parentTopicName": "机场跑路识别",
+      "primaryKeyword": "机场突然停运怎么办",
+      "relatedArticles": [
+        {
+          "url": "/brands/articles/maintenance-vs-shutdown-signs",
+          "title": "品牌临时维护与停止运营有什么区别：三方交叉核验流程与假失联判断"
+        },
+        {
+          "url": "/security/articles/how-to-preserve-payment-evidence",
+          "title": "如何保留付款记录与工单沟通证据：订单流水、脱敏截图与售后争议应对"
+        },
+        {
+          "url": "/security/articles/checklist-before-switching-airport",
+          "title": "机场服务更换前应该检查什么：防同系套娃、协议兼容性与配置平滑迁移清单"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/lingdong/",
+          "name": "灵动云"
+        },
+        {
+          "url": "/reviews/langwang/",
+          "name": "浪网"
+        },
+        {
+          "url": "/reviews/edgenova/",
+          "name": "边缘节点 EdgeNova"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/shandianshu-vs-dalaoyun/",
+          "title": "闪电鼠 vs 大佬云 对比评测"
+        }
+      ]
+    },
+    "/security/articles/long-term-prepaid-risks": {
+      "url": "/security/articles/long-term-prepaid-risks",
+      "title": "长期预付年付机场套餐有哪些风险：沉没成本、不退款条款与 2026-08-09 历史品牌启示",
+      "parentTopic": "/security/avoid-pitfalls/",
+      "parentTopicName": "常见买机场避坑",
+      "primaryKeyword": "机场年付长期套餐风险",
+      "relatedArticles": [
+        {
+          "url": "/pricing/articles/annual-to-monthly-calculation",
+          "title": "机场年付折算月价怎么算：拆解光速云 99元/年、微风 137元/年、5.6 元集群折算陷阱"
+        },
+        {
+          "url": "/pricing/articles/monthly-vs-non-expiring-value",
+          "title": "月付和不限时套餐哪个更划算：回本周期公式与停运沉没成本比较"
+        },
+        {
+          "url": "/security/articles/what-to-do-if-airport-stops",
+          "title": "机场突然停止服务应该怎么办：先排本地故障再取证止损与切换备用方案"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/shandianshu/",
+          "name": "闪电鼠"
+        },
+        {
+          "url": "/reviews/lingdong/",
+          "name": "灵动云"
+        }
+      ],
+      "relatedComparisons": [
+        {
+          "url": "/compare/guangsuyun-vs-feimao/",
+          "title": "光速云 vs 飞猫云 对比评测"
+        }
+      ]
+    },
+    "/security/articles/how-to-preserve-payment-evidence": {
+      "url": "/security/articles/how-to-preserve-payment-evidence",
+      "title": "如何保留付款记录与工单沟通证据：订单流水、脱敏截图与售后争议应对",
+      "parentTopic": "/security/refund/",
+      "parentTopicName": "退款边界与争议",
+      "primaryKeyword": "机场付款记录与证据留存",
+      "relatedArticles": [
+        {
+          "url": "/security/articles/what-to-do-if-airport-stops",
+          "title": "机场突然停止服务应该怎么办：先排本地故障再取证止损与切换备用方案"
+        },
+        {
+          "url": "/security/articles/long-term-prepaid-risks",
+          "title": "长期预付年付机场套餐有哪些风险：沉没成本、不退款条款与 2026-08-09 历史品牌启示"
+        },
+        {
+          "url": "/brands/articles/coupon-code-not-working-fix",
+          "title": "机场优惠码无法使用怎么办与双码冲突排查：特价年付排除规则与 6 家双码记录"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/security/articles/checklist-before-switching-airport": {
+      "url": "/security/articles/checklist-before-switching-airport",
+      "title": "机场服务更换前应该检查什么：防同系套娃、协议兼容性与配置平滑迁移清单",
+      "parentTopic": "/security/alternatives/",
+      "parentTopicName": "服务失联替代方案",
+      "primaryKeyword": "更换机场前检查清单",
+      "relatedArticles": [
+        {
+          "url": "/airport/articles/native-app-vs-third-party-beginners",
+          "title": "自研客户端机场适合新手吗：8 家仅专属端 vs 通用订阅的上手与锁定权衡"
+        },
+        {
+          "url": "/security/articles/what-to-do-if-airport-stops",
+          "title": "机场突然停止服务应该怎么办：先排本地故障再取证止损与切换备用方案"
+        },
+        {
+          "url": "/troubleshooting/articles/client-migration-backup",
+          "title": "从旧客户端、Clash for Windows 与 Mihomo Party 安全迁移并备份配置"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/guangsuyun-vs-feimao/",
+          "title": "光速云 vs 飞猫云 对比评测"
+        }
+      ]
+    },
+    "/troubleshooting/articles/android-v2rayng-clash-disconnect": {
+      "url": "/troubleshooting/articles/android-v2rayng-clash-disconnect",
+      "title": "安卓 v2rayNG 与 Clash Meta for Android 节点失效与后台断连排查",
+      "parentTopic": "/troubleshooting/cannot-connect/",
+      "parentTopicName": "cannot-connect",
+      "primaryKeyword": "安卓 v2rayNG Clash Meta 后台断连节点失效",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/cannot-connect/",
+          "title": "/troubleshooting/cannot-connect/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/bandwidth-multiplier-speedtest-diff": {
+      "url": "/troubleshooting/articles/bandwidth-multiplier-speedtest-diff",
+      "title": "为何客户端测速与实际下载/网页体感差异大及倍率计算详解",
+      "parentTopic": "/troubleshooting/slow-network/",
+      "parentTopicName": "slow-network",
+      "primaryKeyword": "客户端测速与实际下载速度差异倍率计算",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/slow-network/",
+          "title": "/troubleshooting/slow-network/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/clash-verge-mihomo-yaml-fail": {
+      "url": "/troubleshooting/articles/clash-verge-mihomo-yaml-fail",
+      "title": "Mihomo 核心启动失败与 YAML 配置报错排查：语法、端口与规则修复",
+      "parentTopic": "/troubleshooting/app-not-starting/",
+      "parentTopicName": "app-not-starting",
+      "primaryKeyword": "Mihomo核心启动失败YAML报错",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/app-not-starting/",
+          "title": "/troubleshooting/app-not-starting/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/clash-verge-startup-fail": {
+      "url": "/troubleshooting/articles/clash-verge-startup-fail",
+      "title": "Clash Verge Rev 无法启动或白屏怎么修：WebView2 与权限异常排查",
+      "parentTopic": "/troubleshooting/app-not-starting/",
+      "parentTopicName": "app-not-starting",
+      "primaryKeyword": "Clash Verge Rev 无法启动白屏",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/app-not-starting/",
+          "title": "/troubleshooting/app-not-starting/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/client-migration-backup": {
+      "url": "/troubleshooting/articles/client-migration-backup",
+      "title": "从旧客户端、Clash for Windows 与 Mihomo Party 安全迁移并备份配置",
+      "parentTopic": "/troubleshooting/app-not-starting/",
+      "parentTopicName": "app-not-starting",
+      "primaryKeyword": "Clash for Windows Mihomo Party 迁移备份配置",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/app-not-starting/",
+          "title": "/troubleshooting/app-not-starting/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/connected-no-internet": {
+      "url": "/troubleshooting/articles/connected-no-internet",
+      "title": "节点已连接但所有网页打不开排查：系统代理、端口冲突与环路修复",
+      "parentTopic": "/troubleshooting/cannot-connect/",
+      "parentTopicName": "cannot-connect",
+      "primaryKeyword": "节点已连接但所有网页打不开",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/cannot-connect/",
+          "title": "/troubleshooting/cannot-connect/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/cross-client-inconsistency": {
+      "url": "/troubleshooting/articles/cross-client-inconsistency",
+      "title": "同一订阅在不同客户端表现不一致：协议支持与 User-Agent 差异排查",
+      "parentTopic": "/troubleshooting/subscription-failure/",
+      "parentTopicName": "subscription-failure",
+      "primaryKeyword": "同一订阅不同客户端表现不一致 UA 协议差异",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/subscription-failure/",
+          "title": "/troubleshooting/subscription-failure/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/dns-leak-hijack-fix": {
+      "url": "/troubleshooting/articles/dns-leak-hijack-fix",
+      "title": "DNS 污染与 DNS 泄漏怎么排查：代理环境标准 DNS 分流检查",
+      "parentTopic": "/troubleshooting/dns-error/",
+      "parentTopicName": "dns-error",
+      "primaryKeyword": "DNS污染与DNS泄漏排查",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/dns-error/",
+          "title": "/troubleshooting/dns-error/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/fake-ip-explained-fix": {
+      "url": "/troubleshooting/articles/fake-ip-explained-fix",
+      "title": "Fake-IP 原理与 198.18.0.1 异常修复：解决微信与局域网冲突",
+      "parentTopic": "/troubleshooting/dns-error/",
+      "parentTopicName": "dns-error",
+      "primaryKeyword": "Fake-IP 198.18.0.1异常",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/dns-error/",
+          "title": "/troubleshooting/dns-error/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/high-latency-packet-loss-peak": {
+      "url": "/troubleshooting/articles/high-latency-packet-loss-peak",
+      "title": "晚高峰高延迟、丢包与卡顿定位：本地宽带、中转与落地瓶颈区分",
+      "parentTopic": "/troubleshooting/slow-network/",
+      "parentTopicName": "slow-network",
+      "primaryKeyword": "晚高峰代理高延迟丢包卡顿定位",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/slow-network/",
+          "title": "/troubleshooting/slow-network/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/nodes-all-timeout": {
+      "url": "/troubleshooting/articles/nodes-all-timeout",
+      "title": "所有节点同时超时（All Timeout）排查：本地时间、连通性与全局异常分流",
+      "parentTopic": "/troubleshooting/timeout/",
+      "parentTopicName": "timeout",
+      "primaryKeyword": "所有节点同时超时怎么办",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/timeout/",
+          "title": "/troubleshooting/timeout/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/nodes-partial-region-timeout": {
+      "url": "/troubleshooting/articles/nodes-partial-region-timeout",
+      "title": "仅单个节点或特定地区超时排查：节点维护、路由劣化与测速 0B 解读",
+      "parentTopic": "/troubleshooting/timeout/",
+      "parentTopicName": "timeout",
+      "primaryKeyword": "单个节点或特定地区超时测速0B",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/timeout/",
+          "title": "/troubleshooting/timeout/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/quota-expired-vs-stale-config": {
+      "url": "/troubleshooting/articles/quota-expired-vs-stale-config",
+      "title": "套餐到期、流量耗尽与客户端旧配置过时的快速区分指南",
+      "parentTopic": "/troubleshooting/timeout/",
+      "parentTopicName": "timeout",
+      "primaryKeyword": "套餐到期流量耗尽与旧配置过时区分",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/timeout/",
+          "title": "/troubleshooting/timeout/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/shadowrocket-import-rules": {
+      "url": "/troubleshooting/articles/shadowrocket-import-rules",
+      "title": "Shadowrocket 小火箭无法导入订阅与分流规则不生效排查",
+      "parentTopic": "/troubleshooting/subscription-failure/",
+      "parentTopicName": "subscription-failure",
+      "primaryKeyword": "Shadowrocket 无法导入订阅分流规则不生效",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/subscription-failure/",
+          "title": "/troubleshooting/subscription-failure/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/specific-sites-unreachable": {
+      "url": "/troubleshooting/articles/specific-sites-unreachable",
+      "title": "仅个别网站或 AI 工具打不开、与浏览器结果不一致排查指南",
+      "parentTopic": "/troubleshooting/cannot-connect/",
+      "parentTopicName": "cannot-connect",
+      "primaryKeyword": "个别网站AI工具打不开浏览器不一致",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/cannot-connect/",
+          "title": "/troubleshooting/cannot-connect/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/sub-http-200-empty": {
+      "url": "/troubleshooting/articles/sub-http-200-empty",
+      "title": "订阅 HTTP 200 但返回 0 字节或空白订阅排查指南",
+      "parentTopic": "/troubleshooting/subscription-failure/",
+      "parentTopicName": "subscription-failure",
+      "primaryKeyword": "订阅返回HTTP 200空白节点",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/subscription-failure/",
+          "title": "/troubleshooting/subscription-failure/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/sub-http-401-403-404-503": {
+      "url": "/troubleshooting/articles/sub-http-401-403-404-503",
+      "title": "更新订阅失败：HTTP 401/403/404/503 与被重定向排查指南",
+      "parentTopic": "/troubleshooting/subscription-failure/",
+      "parentTopicName": "subscription-failure",
+      "primaryKeyword": "更新订阅失败401 403 404 503",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/subscription-failure/",
+          "title": "/troubleshooting/subscription-failure/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/sub-tls-dns-timeout": {
+      "url": "/troubleshooting/articles/sub-tls-dns-timeout",
+      "title": "更新订阅提示 TLS 证书错误、DNS 解析失败或超时排查指南",
+      "parentTopic": "/troubleshooting/subscription-failure/",
+      "parentTopicName": "subscription-failure",
+      "primaryKeyword": "更新订阅TLS证书错误DNS解析超时",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/subscription-failure/",
+          "title": "/troubleshooting/subscription-failure/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/time-sync-tls-cert-error": {
+      "url": "/troubleshooting/articles/time-sync-tls-cert-error",
+      "title": "系统时间不同步导致 VLESS 与 TLS 握手失败校准指南",
+      "parentTopic": "/troubleshooting/cannot-connect/",
+      "parentTopicName": "cannot-connect",
+      "primaryKeyword": "系统时间不同步 VLESS TLS 握手失败校准",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/cannot-connect/",
+          "title": "/troubleshooting/cannot-connect/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/tun-not-working": {
+      "url": "/troubleshooting/articles/tun-not-working",
+      "title": "TUN 模式开启无效怎么修：虚拟网卡冲突与服务授权排查",
+      "parentTopic": "/troubleshooting/cannot-connect/",
+      "parentTopicName": "cannot-connect",
+      "primaryKeyword": "TUN模式开启无效",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/cannot-connect/",
+          "title": "/troubleshooting/cannot-connect/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/tun-vs-system-proxy": {
+      "url": "/troubleshooting/articles/tun-vs-system-proxy",
+      "title": "TUN 模式与系统代理有什么区别：适用场景与切换断网修复",
+      "parentTopic": "/troubleshooting/cannot-connect/",
+      "parentTopicName": "cannot-connect",
+      "primaryKeyword": "TUN模式与系统代理区别",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/cannot-connect/",
+          "title": "/troubleshooting/cannot-connect/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/troubleshooting/articles/v2rayn-system-proxy-fail": {
+      "url": "/troubleshooting/articles/v2rayn-system-proxy-fail",
+      "title": "v2rayN 已运行但浏览器不走代理或系统代理自动还原怎么修",
+      "parentTopic": "/troubleshooting/cannot-connect/",
+      "parentTopicName": "cannot-connect",
+      "primaryKeyword": "v2rayN系统代理自动还原",
+      "relatedArticles": [
+        {
+          "url": "/troubleshooting/",
+          "title": "/troubleshooting/"
+        },
+        {
+          "url": "/troubleshooting/cannot-connect/",
+          "title": "/troubleshooting/cannot-connect/"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/compare/guangsuyun-vs-feimao/": {
+      "url": "/compare/guangsuyun-vs-feimao/",
+      "title": "光速云 vs 飞猫云 对比评测：全能主力配置与自研小白模式的深度权衡",
+      "parentTopic": "/brands/alternatives/",
+      "parentTopicName": "品牌替代方案",
+      "primaryKeyword": "光速云和飞猫云哪个好",
+      "relatedArticles": [
+        {
+          "url": "/airport/articles/native-app-vs-third-party-beginners",
+          "title": "自研客户端机场适合新手吗：8 家仅专属端 vs 通用订阅的上手与锁定权衡"
+        },
+        {
+          "url": "/pricing/articles/under-20-yuan-monthly-guide",
+          "title": "20 元以内月付机场有哪些选择条件：14.9–20 元主力月付实算对比"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/feimao/",
+          "name": "飞猫云"
+        }
+      ],
+      "relatedComparisons": []
+    },
+    "/compare/guangsuyun-vs-ermao/": {
+      "url": "/compare/guangsuyun-vs-ermao/",
+      "title": "光速云 vs 二猫云 对比评测：25元主力月付档与不限时流量包横向评测",
+      "parentTopic": "/brands/alternatives/",
+      "parentTopicName": "品牌替代方案",
+      "primaryKeyword": "光速云和二猫云对比",
+      "relatedArticles": [
+        {
+          "url": "/pricing/articles/monthly-vs-non-expiring-value",
+          "title": "月付和不限时套餐哪个更划算：回本周期公式与停运沉没成本比较"
+        },
+        {
+          "url": "/pricing/articles/under-20-yuan-monthly-guide",
+          "title": "20 元以内月付机场有哪些选择条件：14.9–20 元主力月付实算对比"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/guangsuyun/",
+          "name": "光速云"
+        },
+        {
+          "url": "/reviews/ermao/",
+          "name": "二猫云"
+        }
+      ],
+      "relatedComparisons": []
+    },
+    "/compare/feimao-vs-xingdaomeng/": {
+      "url": "/compare/feimao-vs-xingdaomeng/",
+      "title": "飞猫云 vs 星岛梦 对比评测：专属客户端极简模式与2020老牌多地区节点对比",
+      "parentTopic": "/brands/alternatives/",
+      "parentTopicName": "品牌替代方案",
+      "primaryKeyword": "飞猫云和星岛梦对比",
+      "relatedArticles": [
+        {
+          "url": "/airport/articles/native-app-vs-third-party-beginners",
+          "title": "自研客户端机场适合新手吗：8 家仅专属端 vs 通用订阅的上手与锁定权衡"
+        },
+        {
+          "url": "/brands/articles/verify-brand-operating-years",
+          "title": "机场品牌的运营时间如何核实：区分开业年份宣称、历史档案与实际可证日期"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/feimao/",
+          "name": "飞猫云"
+        },
+        {
+          "url": "/reviews/xingdaomeng/",
+          "name": "星岛梦"
+        }
+      ],
+      "relatedComparisons": []
+    },
+    "/compare/weifeng-vs-wuyou/": {
+      "url": "/compare/weifeng-vs-wuyou/",
+      "title": "微风网络 vs 无忧链接 对比评测：27元 VLESS 专线与 6.58 元起年付专线博弈",
+      "parentTopic": "/brands/alternatives/",
+      "parentTopicName": "品牌替代方案",
+      "primaryKeyword": "微风网络和无忧链接对比",
+      "relatedArticles": [
+        {
+          "url": "/pricing/articles/annual-to-monthly-calculation",
+          "title": "机场年付折算月价怎么算：拆解光速云 99元/年、微风 137元/年、5.6 元集群折算陷阱"
+        },
+        {
+          "url": "/routes/articles/how-to-spot-unverified-iepl",
+          "title": "如何识别未经验证的专线宣传：比对 2026-10-19 趋同表与 0B/晚高峰丢包证据"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/weifeng/",
+          "name": "微风网络"
+        },
+        {
+          "url": "/reviews/wuyou/",
+          "name": "无忧链接"
+        }
+      ],
+      "relatedComparisons": []
+    },
+    "/compare/shandianshu-vs-dalaoyun/": {
+      "url": "/compare/shandianshu-vs-dalaoyun/",
+      "title": "闪电鼠 vs 大佬云 对比评测：5.6 元极简平价同质年付集群横向审计",
+      "parentTopic": "/brands/alternatives/",
+      "parentTopicName": "品牌替代方案",
+      "primaryKeyword": "闪电鼠和大佬云对比",
+      "relatedArticles": [
+        {
+          "url": "/pricing/articles/annual-to-monthly-calculation",
+          "title": "机场年付折算月价怎么算：拆解光速云 99元/年、微风 137元/年、5.6 元集群折算陷阱"
+        },
+        {
+          "url": "/brands/articles/maintenance-vs-shutdown-signs",
+          "title": "品牌临时维护与停止运营有什么区别：三方交叉核验流程与假失联判断"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/shandianshu/",
+          "name": "闪电鼠"
+        },
+        {
+          "url": "/reviews/dalaoyun/",
+          "name": "大佬云"
+        }
+      ],
+      "relatedComparisons": []
+    },
+    "/compare/sogo-vs-kexin/": {
+      "url": "/compare/sogo-vs-kexin/",
+      "title": "SOGO云 vs 可信云 对比评测：15 国大覆盖客户端与高诚实度品牌取舍",
+      "parentTopic": "/brands/alternatives/",
+      "parentTopicName": "品牌替代方案",
+      "primaryKeyword": "SOGO云和可信云对比",
+      "relatedArticles": [
+        {
+          "url": "/airport/articles/more-nodes-better-myth",
+          "title": "机场节点数量越多越好吗：60+ 节点重复复用 vs 有效落地与负载均衡"
+        },
+        {
+          "url": "/ai-media/articles/claude-connection-ban-risks",
+          "title": "Claude 连接失败如何排查：Anthropic 机房 IP 判定、切节点封号风险与出站规避"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/sogo/",
+          "name": "SOGO云"
+        },
+        {
+          "url": "/reviews/kexin/",
+          "name": "可信云"
+        }
+      ],
+      "relatedComparisons": []
+    },
+    "/compare/firefly-vs-lingmao/": {
+      "url": "/compare/firefly-vs-lingmao/",
+      "title": "Firefly vs 灵猫网络 对比评测：专属客户端异常审计与 18 元平价通用订阅对比",
+      "parentTopic": "/brands/alternatives/",
+      "parentTopicName": "品牌替代方案",
+      "primaryKeyword": "Firefly和灵猫网络对比",
+      "relatedArticles": [
+        {
+          "url": "/brands/articles/verify-official-site-vs-aff",
+          "title": "如何判断机场官网是否真实与识别 AFF 链接：揭秘注册跳板域名、code 参数与链接格式异常"
+        },
+        {
+          "url": "/brands/articles/coupon-code-not-working-fix",
+          "title": "机场优惠码无法使用怎么办与双码冲突排查：特价年付排除规则与 6 家双码记录"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/firefly/",
+          "name": "Firefly"
+        },
+        {
+          "url": "/reviews/lingmao/",
+          "name": "灵猫网络"
+        }
+      ],
+      "relatedComparisons": []
+    },
+    "/compare/muguang-vs-yuzhou/": {
+      "url": "/compare/muguang-vs-yuzhou/",
+      "title": "暮光加速 vs 宇宙云 对比评测：BGP 智能调度专线与多协议大吞吐对抗",
+      "parentTopic": "/brands/alternatives/",
+      "parentTopicName": "品牌替代方案",
+      "primaryKeyword": "暮光加速和宇宙云对比",
+      "relatedArticles": [
+        {
+          "url": "/airport/articles/multi-device-airport-selection",
+          "title": "多设备用户如何选择机场：设备数限制、不限设备宣称与软路由并发策略"
+        },
+        {
+          "url": "/routes/articles/low-ping-vs-download-speed",
+          "title": "延迟低是否意味着下载速度快：RTT vs HTTPS Ping 与 32 线程测速 vs 单线程体感"
+        }
+      ],
+      "relatedReviews": [
+        {
+          "url": "/reviews/muguang/",
+          "name": "暮光加速"
+        },
+        {
+          "url": "/reviews/yuzhou/",
+          "name": "宇宙云"
+        }
+      ],
+      "relatedComparisons": []
+    },
+    "/reviews/guangsuyun/": {
+      "url": "/reviews/guangsuyun/",
+      "title": "光速云 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "光速云深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/guangsuyun/",
+          "title": "光速云 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/guangsuyun-vs-feimao/",
+          "title": "光速云 vs 飞猫云 对比评测"
+        },
+        {
+          "url": "/compare/guangsuyun-vs-ermao/",
+          "title": "光速云 vs 二猫云 对比评测"
+        }
+      ]
+    },
+    "/reviews/feimao/": {
+      "url": "/reviews/feimao/",
+      "title": "飞猫云 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "飞猫云深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/feimao/",
+          "title": "飞猫云 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/guangsuyun-vs-feimao/",
+          "title": "光速云 vs 飞猫云 对比评测"
+        },
+        {
+          "url": "/compare/feimao-vs-xingdaomeng/",
+          "title": "飞猫云 vs 星岛梦 对比评测"
+        }
+      ]
+    },
+    "/reviews/weifeng/": {
+      "url": "/reviews/weifeng/",
+      "title": "微风网络 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "微风网络深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/weifeng/",
+          "title": "微风网络 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/weifeng-vs-wuyou/",
+          "title": "微风网络 vs 无忧链接 对比评测"
+        }
+      ]
+    },
+    "/reviews/xingdaomeng/": {
+      "url": "/reviews/xingdaomeng/",
+      "title": "星岛梦 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "星岛梦深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/xingdaomeng/",
+          "title": "星岛梦 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/feimao-vs-xingdaomeng/",
+          "title": "飞猫云 vs 星岛梦 对比评测"
+        }
+      ]
+    },
+    "/reviews/wuyou/": {
+      "url": "/reviews/wuyou/",
+      "title": "无忧链接 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "无忧链接深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/wuyou/",
+          "title": "无忧链接 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/weifeng-vs-wuyou/",
+          "title": "微风网络 vs 无忧链接 对比评测"
+        }
+      ]
+    },
+    "/reviews/ermao/": {
+      "url": "/reviews/ermao/",
+      "title": "二猫云 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "二猫云深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/ermao/",
+          "title": "二猫云 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/guangsuyun-vs-ermao/",
+          "title": "光速云 vs 二猫云 对比评测"
+        }
+      ]
+    },
+    "/reviews/weitu/": {
+      "url": "/reviews/weitu/",
+      "title": "唯兔云 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "唯兔云深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/weitu/",
+          "title": "唯兔云 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/reviews/firefly/": {
+      "url": "/reviews/firefly/",
+      "title": "Firefly 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "Firefly深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/firefly/",
+          "title": "Firefly 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/firefly-vs-lingmao/",
+          "title": "Firefly vs 灵猫网络 对比评测"
+        }
+      ]
+    },
+    "/reviews/muguang/": {
+      "url": "/reviews/muguang/",
+      "title": "暮光加速 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "暮光加速深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/muguang/",
+          "title": "暮光加速 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/muguang-vs-yuzhou/",
+          "title": "暮光加速 vs 宇宙云 对比评测"
+        }
+      ]
+    },
+    "/reviews/yuzhou/": {
+      "url": "/reviews/yuzhou/",
+      "title": "宇宙云 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "宇宙云深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/yuzhou/",
+          "title": "宇宙云 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/muguang-vs-yuzhou/",
+          "title": "暮光加速 vs 宇宙云 对比评测"
+        }
+      ]
+    },
+    "/reviews/u1s1/": {
+      "url": "/reviews/u1s1/",
+      "title": "U1S1 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "U1S1深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/u1s1/",
+          "title": "U1S1 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/reviews/lingmao/": {
+      "url": "/reviews/lingmao/",
+      "title": "灵猫网络 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "灵猫网络深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/lingmao/",
+          "title": "灵猫网络 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/firefly-vs-lingmao/",
+          "title": "Firefly vs 灵猫网络 对比评测"
+        }
+      ]
+    },
+    "/reviews/jilian/": {
+      "url": "/reviews/jilian/",
+      "title": "极连云 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "极连云深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/jilian/",
+          "title": "极连云 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/reviews/guangnian/": {
+      "url": "/reviews/guangnian/",
+      "title": "光年梯 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "光年梯深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/guangnian/",
+          "title": "光年梯 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/reviews/yifan/": {
+      "url": "/reviews/yifan/",
+      "title": "一翻云 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "一翻云深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/yifan/",
+          "title": "一翻云 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/reviews/sogo/": {
+      "url": "/reviews/sogo/",
+      "title": "SOGO云 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "SOGO云深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/sogo/",
+          "title": "SOGO云 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/sogo-vs-kexin/",
+          "title": "SOGO云 vs 可信云 对比评测"
+        }
+      ]
+    },
+    "/reviews/kexin/": {
+      "url": "/reviews/kexin/",
+      "title": "可信云 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "可信云深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/kexin/",
+          "title": "可信云 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/sogo-vs-kexin/",
+          "title": "SOGO云 vs 可信云 对比评测"
+        }
+      ]
+    },
+    "/reviews/sujie/": {
+      "url": "/reviews/sujie/",
+      "title": "速界 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "速界深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/sujie/",
+          "title": "速界 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/reviews/shanyue/": {
+      "url": "/reviews/shanyue/",
+      "title": "闪跃 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "闪跃深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/shanyue/",
+          "title": "闪跃 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/reviews/quanqiu/": {
+      "url": "/reviews/quanqiu/",
+      "title": "全球云 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "全球云深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/quanqiu/",
+          "title": "全球云 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/reviews/shandianshu/": {
+      "url": "/reviews/shandianshu/",
+      "title": "闪电鼠 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "闪电鼠深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/shandianshu/",
+          "title": "闪电鼠 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/shandianshu-vs-dalaoyun/",
+          "title": "闪电鼠 vs 大佬云 对比评测"
+        }
+      ]
+    },
+    "/reviews/dalaoyun/": {
+      "url": "/reviews/dalaoyun/",
+      "title": "大佬云 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "大佬云深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/dalaoyun/",
+          "title": "大佬云 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": [
+        {
+          "url": "/compare/shandianshu-vs-dalaoyun/",
+          "title": "闪电鼠 vs 大佬云 对比评测"
+        }
+      ]
+    },
+    "/reviews/yunjiexian/": {
+      "url": "/reviews/yunjiexian/",
+      "title": "云界线 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "云界线深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/yunjiexian/",
+          "title": "云界线 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/reviews/liulianyun/": {
+      "url": "/reviews/liulianyun/",
+      "title": "榴莲云 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "榴莲云深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/liulianyun/",
+          "title": "榴莲云 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/reviews/shenxing/": {
+      "url": "/reviews/shenxing/",
+      "title": "神行加速 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "神行加速深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/shenxing/",
+          "title": "神行加速 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/reviews/huanqiuti/": {
+      "url": "/reviews/huanqiuti/",
+      "title": "环球梯 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "环球梯深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/huanqiuti/",
+          "title": "环球梯 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/reviews/yinxingren/": {
+      "url": "/reviews/yinxingren/",
+      "title": "隐形人 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "隐形人深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/yinxingren/",
+          "title": "隐形人 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/reviews/tiziyun/": {
+      "url": "/reviews/tiziyun/",
+      "title": "梯子云 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "梯子云深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/tiziyun/",
+          "title": "梯子云 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/reviews/lingdong/": {
+      "url": "/reviews/lingdong/",
+      "title": "灵动云 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "灵动云深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/lingdong/",
+          "title": "灵动云 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/reviews/langwang/": {
+      "url": "/reviews/langwang/",
+      "title": "浪网 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "浪网深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/langwang/",
+          "title": "浪网 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    },
+    "/reviews/edgenova/": {
+      "url": "/reviews/edgenova/",
+      "title": "边缘节点 EdgeNova 深度评测：线路架构、测速表现与选型避坑指南",
+      "parentTopic": "/brands/reviews/",
+      "parentTopicName": "品牌评测汇总",
+      "primaryKeyword": "边缘节点 EdgeNova深度评测",
+      "relatedArticles": [
+        {
+          "url": "/brands/directory/",
+          "title": "31家品牌数据库检索"
+        },
+        {
+          "url": "/brands/edgenova/",
+          "title": "边缘节点 EdgeNova 商业套餐详情"
+        }
+      ],
+      "relatedReviews": [],
+      "relatedComparisons": []
+    }
+  }
+}
